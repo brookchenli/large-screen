@@ -1,0 +1,69 @@
+.bar {
+  width: 100%;
+  height: 28px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 10px;
+
+  .bar-time,
+  .bar-date,
+  .bar-weekday {
+    white-space: nowrap;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .bar-separator {
+    width: 1px;
+    height: 18px;
+    background-color: #ffffff;
+    margin: 0 6px;
+    flex-shrink: 0;
+  }
+
+  .bar-weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+
+    .bar-weather-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+  }
+
+  .bar-temperature,
+  .bar-humidity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+
+    .bar-icon {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+
+    .bar-value {
+      white-space: nowrap;
+      line-height: 28px;
+    }
+  }
+}
