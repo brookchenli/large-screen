@@ -1,6 +1,5 @@
 import Panel from "@/components/panel";
 import "./index.less";
-import recordsIcon1 from "@/assets/records_icon1.png";
 
 export default function Staff() {
   const staff = [

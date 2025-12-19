@@ -1,10 +1,103 @@
 .storage {
-  width: 100%;
+  width: 430px;
   height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 20px;
+
+  .storage-header {
+    width: 100%;
+    height: 52px;
+    background-image: url("@/assets/storage_header.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .storage-content {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 54px;
+
+    .storage-content-left {
+      width: 120px;
+      height: 100%;
+      // background-color: green;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin-left: 20px;
+
+      .storage-content-left-title {
+        font-family: "PingFang SC";
+        font-size: 18px;
+        font-weight: 400;
+        color: #ffffff;
+      }
+    }
+
+    .storage-content-right {
+      flex: 1;
+      height: 100%;
+      // background-color: red;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 23px;
+
+      .storage-item {
+        width: 100%;
+        height: 38px;
+        // background-color: blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .storage-item-top {
+          width: 100%;
+          height: 25px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          .storage-item-top-label {
+            font-family: "PingFang SC";
+            font-size: 18px;
+            font-weight: 400;
+            color: #ffffff;
+            opacity: 0.6;
+          }
+          .storage-item-top-value {
+            font-family: "PingFang SC";
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+          }
+        }
+
+        .storage-item-bottom {
+          width: 100%;
+          height: 6px;
+          background-color: rgba(129, 129, 129, 0.15);
+
+          .storage-item-bottom-progress {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
 
   .storage-left {
     width: 110px;

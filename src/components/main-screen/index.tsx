@@ -1,31 +1,15 @@
 import "./index.less";
-import { useState, useEffect } from "react";
-import Bar from "@/components/bar";
 import Storage from "@/components/storage";
 import Records from "@/components/records";
 import Tasks from "@/components/tasks";
 import Staff from "@/components/staff";
-import ProgressCircle from "@/components/progress-circle";
 import DailyCollection from "@/components/daily-collection";
+import LeftSide from "@/components/left-side";
 const Index = () => {
-  const [time, setTime] = useState(new Date());
-  const [weather, setWeather] = useState({
-    temperature: 0,
-    humidity: 0,
-    wind: 0,
-    precipitation: 0,
-    visibility: 0,
-  });
-
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-  }, []);
-
   return (
     <div className="main-screen">
-      <div className="main-screen-left">
+      <LeftSide />
+      {/* <div className="main-screen-left">
         <div className="row">
           <div className="col">
             <Storage />
@@ -46,7 +30,7 @@ const Index = () => {
           <DailyCollection />
         </div>
         <div className="row">每日采集量2</div>
-      </div>
+      </div> */}
 
       {/* <Bar />
       <Storage /> */}
