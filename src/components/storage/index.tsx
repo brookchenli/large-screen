@@ -1,5 +1,6 @@
 import "./index.less";
 import Panel from "@/components/panel";
+import ProgressCircle from "@/components/progress-circle";
 
 interface BarItem {
   label: string;
@@ -23,7 +24,7 @@ export default function Storage() {
         <div className="storage-left">
           <div className="storage-left-title">使用情况</div>
           <div className="storage-left-content">
-            <div className="storage-left-content-circle"></div>
+            <ProgressCircle percentage={usagePercentage} />
           </div>
         </div>
         <div className="storage-right">

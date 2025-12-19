@@ -5,6 +5,8 @@ import Storage from "@/components/storage";
 import Records from "@/components/records";
 import Tasks from "@/components/tasks";
 import Staff from "@/components/staff";
+import ProgressCircle from "@/components/progress-circle";
+import DailyCollection from "@/components/daily-collection";
 const Index = () => {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState({
@@ -40,7 +42,9 @@ const Index = () => {
             <Staff />
           </div>
         </div>
-        <div className="row">每日采集量1</div>
+        <div className="row">
+          <DailyCollection />
+        </div>
         <div className="row">每日采集量2</div>
       </div>
 
