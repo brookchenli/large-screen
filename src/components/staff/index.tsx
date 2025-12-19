@@ -1,63 +1,85 @@
-import Panel from "@/components/panel";
 import "./index.less";
+import staffIcon1 from "@/assets/prize-1.png";
+import staffIcon2 from "@/assets/prize-2.png";
+import staffIcon3 from "@/assets/prize-3.png";
+import staffIcon4 from "@/assets/prize-4.png";
 
-export default function Records() {
-  const tasks = [
+export default function Staff() {
+  const staffData = [
     {
-      label: "任务1",
-      value1: 80,
-      value2: 20,
-      total: 200,
-      index: "01",
+      label: "标签名称1",
+      value: 23456,
+      total: 100000,
+      index: "1",
+      icon: staffIcon1,
+      showPrize: true,
+      color: "#3877f2",
     },
     {
-      label: "任务2",
-      value1: 80,
-      value2: 20,
-      total: 300,
-      index: "02",
-    },
-    {
-      label: "任务3",
-      value1: 80,
-      value2: 20,
+      label: "标签名称2",
+      value: 60,
       total: 100,
-      index: "03",
+      index: "2",
+      icon: staffIcon2,
+      showPrize: true,
+      color: "#00BFFF",
+    },
+    {
+      label: "标签名称3",
+      value: 90,
+      total: 100,
+      index: "3",
+      icon: staffIcon3,
+      showPrize: true,
+      color: "#00FF7F",
+    },
+    {
+      label: "标签名称4",
+      value: 40,
+      total: 100,
+      index: "4",
+      icon: staffIcon4,
+      showPrize: false,
+      color: "#FFA500",
+    },
+    {
+      label: "标签名称5",
+      value: 76,
+      total: 100,
+      index: "5",
+      icon: staffIcon4,
+      showPrize: false,
+      color: "#FF0000",
     },
   ];
   return (
-    <Panel title="分任务统计">
-      <div className="tasks">
-        {tasks.map((task, index) => (
-          <div className="tasks-item" key={index}>
-            <div className="tasks-item-top">
-              <div className="tasks-item-top-left">
-                <div className="tasks-item-top-left-index">{task.index}</div>
-                <div className="tasks-item-top-left-label">{task.label}</div>
-              </div>
-              <div className="tasks-item-top-right">
-                <span className="tasks-item-top-right-value1">
-                  {task.value1}
-                </span>
-                <span className="tasks-item-top-right-separator">/</span>
-                <span className="tasks-item-top-right-value2">
-                  {task.value2}
-                </span>
-              </div>
+    <div className="staff">
+      <div className="staff-header"></div>
+      <div className="staff-content">
+        {staffData.map((staff, index) => (
+          <div className="staff-item" key={index}>
+            <div
+              className={`staff-item-index ${
+                !staff.showPrize ? "staff-item-index-white" : ""
+              }`}
+              style={{ backgroundImage: `url(${staff.icon})` }}
+            >
+              {staff.index}
             </div>
-            <div className="tasks-item-bottom">
+            <div className="staff-item-label">{staff.label}</div>
+            <div className="staff-item-value">{staff.value}</div>
+            <div className="staff-item-progress">
               <div
-                className="tasks-item-bottom-blue"
-                style={{ width: `${(task.value1 / task.total) * 100}%` }}
-              ></div>
-              <div
-                className="tasks-item-bottom-green"
-                style={{ width: `${(task.value2 / task.total) * 100}%` }}
+                className="staff-item-progress-bar"
+                style={{
+                  width: `${(staff.value / staff.total) * 100}%`,
+                  backgroundColor: staff.color,
+                }}
               ></div>
             </div>
           </div>
         ))}
       </div>
-    </Panel>
+    </div>
   );
 }

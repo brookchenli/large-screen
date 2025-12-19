@@ -13,7 +13,7 @@ export default function LeftSide() {
       </div>
       <div className="left-side-row2">
         <Tasks />
-        <Tasks />
+        <Staff />
       </div>
 
       {/* <div className="row">
