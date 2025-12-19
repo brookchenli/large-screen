@@ -1,9 +1,5 @@
 import "./index.less";
-import Storage from "@/components/storage";
-import Records from "@/components/records";
-import Tasks from "@/components/tasks";
-import Staff from "@/components/staff";
-import DailyCollection from "@/components/daily-collection";
+
 import LeftSide from "@/components/left-side";
 const Index = () => {
   return (

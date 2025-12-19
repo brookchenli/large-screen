@@ -9,8 +9,13 @@ export default function LeftSide() {
     <div className="left-side">
       <div className="left-side-row1">
         <Storage />
-        {/* <Records /> */}
+        <Records />
       </div>
+      <div className="left-side-row2">
+        <Tasks />
+        <Tasks />
+      </div>
+
       {/* <div className="row">
           <div className="col">
             <Tasks />

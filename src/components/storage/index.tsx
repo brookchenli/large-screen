@@ -34,7 +34,7 @@ export default function Storage() {
         </div>
         <div className="storage-content-right">
           {barData.map((item) => (
-            <div className="storage-item">
+            <div className="storage-item" key={item.label}>
               <div className="storage-item-top">
                 <div className="storage-item-top-label">{item.label}</div>
                 <div className="storage-item-top-value">{item.value}</div>
@@ -52,32 +52,6 @@ export default function Storage() {
           ))}
         </div>
       </div>
-      {/* <div className="storage-left">
-        <div className="storage-left-title">使用情况</div>
-        <div className="storage-left-content">
-          <ProgressCircle percentage={usagePercentage} />
-        </div>
-      </div>
-      <div className="storage-right">
-        {barData.map((item) => (
-          <div className="storage-right-bar-item">
-            <div className="storage-right-bar-item-top">
-              <div className="storage-right-bar-item-top-label">
-                {item.label}
-              </div>
-              <div className="storage-right-bar-item-top-value">
-                {item.value}
-              </div>
-            </div>
-            <div className="storage-right-bar-item-bottom">
-              <div
-                className="storage-right-bar-item-bottom-progress"
-                style={{ width: `${item.percentage}%` }}
-              ></div>
-            </div>
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 }
