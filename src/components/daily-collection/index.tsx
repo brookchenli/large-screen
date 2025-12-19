@@ -1,29 +1,56 @@
+import "./index.less";
+import Panel from "@/components/panel";
+import ReactECharts from "echarts-for-react";
+
 export default function DailyCollection() {
-  const dailyCollection = [
-    {
-      data: "2025-12-19",
-      value: 34201,
+  const option = {
+    title: {
+      text: "每日采集量1",
     },
-    {
-      data: "2025-12-20",
-      value: 34201,
+    tooltip: {
+      trigger: "axis",
     },
-    {
-      data: "2025-12-21",
-      value: 34201,
+    xAxis: {
+      type: "category",
+      data: [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+      ],
     },
-    {
-      data: "2025-12-22",
-      value: 34201,
+    yAxis: {
+      type: "value",
     },
-    {
-      data: "2025-12-23",
-      value: 34201,
-    },
-    {
-      data: "2025-12-24",
-      value: 34201,
-    },
-  ];
-  return <div className="daily-collection">DailyCollection</div>;
+    series: [
+      {
+        name: "PV",
+        type: "line",
+        data: [
+          120, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150, 80, 70,
+          10,
+        ],
+      },
+    ],
+  };
+  return (
+    <Panel title="每日采集量">
+      <ReactECharts
+        option={option}
+        style={{ height: "100%", width: "100%", backgroundColor: "red" }}
+      />
+    </Panel>
+  );
 }
