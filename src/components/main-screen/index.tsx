@@ -1,6 +1,8 @@
 import "./index.less";
 import { useState, useEffect } from "react";
 import Bar from "@/components/bar";
+import Storage from "@/components/storage";
+import Records from "@/components/records";
 const Index = () => {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState({
@@ -19,7 +21,25 @@ const Index = () => {
 
   return (
     <div className="main-screen">
-      <Bar />
+      <div className="main-screen-left">
+        <div className="row">
+          <div className="col">
+            <Storage />
+          </div>
+          <div className="col">
+            <Records />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">分任务统计</div>
+          <div className="col">分员工统计</div>
+        </div>
+        <div className="row">每日采集量1</div>
+        <div className="row">每日采集量2</div>
+      </div>
+
+      {/* <Bar />
+      <Storage /> */}
       {/* <div className="header">
         <div className="header-left"></div>
         <div className="header-center"></div>
