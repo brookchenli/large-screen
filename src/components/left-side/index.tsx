@@ -4,6 +4,7 @@ import Records from "@/components/records";
 import Tasks from "@/components/tasks";
 import Staff from "@/components/staff";
 import DailyCollection from "@/components/daily-collection";
+import DailyCollection1 from "@/components/daily-collection-1";
 export default function LeftSide() {
   return (
     <div className="left-side">
@@ -14,6 +15,14 @@ export default function LeftSide() {
       <div className="left-side-row2">
         <Tasks />
         <Staff />
+      </div>
+
+      <div className="left-side-row3">
+        <DailyCollection />
+      </div>
+
+      <div className="left-side-row4">
+        <DailyCollection1 />
       </div>
 
       {/* <div className="row">

@@ -1,21 +1,13 @@
 import "./index.less";
-import Panel from "@/components/panel";
 import ReactECharts from "echarts-for-react";
 
-export default function DailyCollection() {
+export default function DailyCollection1() {
   const option = {
     title: {
-      text: "每日采集量1",
       show: false,
     },
     tooltip: {
       trigger: "axis",
-    },
-    grid: {
-      left: "0%",
-      right: "0%",
-      top: "0%",
-      bottom: "0%",
     },
     xAxis: {
       type: "category",
@@ -41,6 +33,12 @@ export default function DailyCollection() {
     yAxis: {
       type: "value",
     },
+    grid: {
+      left: "0%",
+      right: "0%",
+      bottom: "3%",
+      top: "5%",
+    },
     series: [
       {
         name: "PV",
@@ -53,8 +51,14 @@ export default function DailyCollection() {
     ],
   };
   return (
-    <Panel title="每日采集量">
-      <ReactECharts option={option} style={{ height: "100%", width: "100%" }} />
-    </Panel>
+    <div className="daily-collection1">
+      <div className="daily-collection-header"></div>
+      <div className="daily-collection-content">
+        <ReactECharts
+          option={option}
+          style={{ height: "100%", width: "100%" }}
+        />
+      </div>
+    </div>
   );
 }
