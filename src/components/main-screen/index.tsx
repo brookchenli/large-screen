@@ -5,8 +5,9 @@ import RightSide from "@/components/right-side";
 const Index = () => {
   return (
     <div className="main-screen">
-      <LeftSide />
-      {/* <RightSide /> */}
+      {/* <LeftSide /> */}
+
+      <RightSide />
       {/* <div className="main-screen-left">
         <div className="row">
           <div className="col">

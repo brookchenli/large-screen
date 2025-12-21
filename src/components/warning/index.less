@@ -1,0 +1,98 @@
+.warning {
+  width: 430px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  font-family: "PingFang SC";
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+
+  .warning-header {
+    width: 100%;
+    height: 52px;
+    background-image: url("@/assets/storage_header.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .warning-content-section1 {
+    width: 100%;
+    height: 168px;
+    // background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+
+    .warning-content-section1-item {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+
+      .warning-content-section1-item-info-value-unit {
+        opacity: 0.6;
+        margin-left: 2px;
+      }
+
+      .warning-content-section1-item-info-text {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .warning-content-section2 {
+    width: 100%;
+    height: 217px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .warning-content-section2-item {
+      width: 100%;
+      height: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0px;
+
+      .warning-content-section2-item-icon {
+        width: 16px;
+        height: 16px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 22px;
+      }
+
+      .warning-content-section2-item-label {
+        width: 100px;
+        text-align: center;
+        text-align: left;
+      }
+
+      .warning-content-section2-item-percentage {
+        flex: 1;
+        height: 6px;
+        background-color: yellow;
+      }
+
+      .warning-content-section2-item-value {
+        width: 50px;
+        text-align: center;
+        text-align: right;
+      }
+    }
+  }
+}
