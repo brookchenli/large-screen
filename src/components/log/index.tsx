@@ -77,7 +77,9 @@ export default function Log() {
             return (
               <div
                 className={`log-content-item ${
-                  index === focusedIndex ? "log-content-item-focused" : ""
+                  index === focusedIndex
+                    ? "log-content-item-focused"
+                    : "log-content-item-unfocused"
                 }`}
                 key={index}
               >
