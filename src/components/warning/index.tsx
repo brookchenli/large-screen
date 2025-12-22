@@ -98,7 +98,9 @@ export default function Warning() {
   ];
   return (
     <div className="warning">
-      <div className="warning-header"></div>
+      <div className="warning-header">
+        <div className="warning-header-title">警告提示</div>
+      </div>
       <div className="warning-content-section1">
         {data.map((item) => (
           <div className="warning-content-section1-item" key={item.label}>

@@ -29,7 +29,9 @@ export default function Scenario() {
   ];
   return (
     <div className="scenario">
-      <div className="scenario-header"></div>
+      <div className="scenario-header">
+        <div className="scenario-header-title">场景展示</div>
+      </div>
       <div className="scenario-content">
         {data.map((item) => (
           <div className="scenario-content-item" key={item.title}>

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import "./index.less";
-import storageIcon from "@/assets/storage_header.png";
+import storageIcon from "@/assets/header-bg-big.png";
 
 interface PanelProps {
   children: ReactNode;

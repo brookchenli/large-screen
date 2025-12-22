@@ -55,7 +55,9 @@ export default function Log() {
   const focusedIndex = 4;
   return (
     <div className="log">
-      <div className="log-header"></div>
+      <div className="log-header">
+        <div className="log-header-title">日志数据</div>
+      </div>
       <div className="log-content">
         {data.map((item, index) => {
           if (index === 0) {

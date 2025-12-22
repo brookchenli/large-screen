@@ -26,7 +26,9 @@ export default function Records() {
   ];
   return (
     <div className="tasks">
-      <div className="tasks-header"></div>
+      <div className="tasks-header">
+        <div className="tasks-header-title">分任务统计</div>
+      </div>
       <div className="tasks-content">
         {tasks.map((task, index) => (
           <div className="tasks-item" key={index}>

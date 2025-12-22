@@ -54,7 +54,9 @@ export default function Staff() {
   ];
   return (
     <div className="staff">
-      <div className="staff-header"></div>
+      <div className="staff-header">
+        <div className="staff-header-title">分员工统计</div>
+      </div>
       <div className="staff-content">
         {staffData.map((staff, index) => (
           <div className="staff-item" key={index}>

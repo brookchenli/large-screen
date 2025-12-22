@@ -19,7 +19,9 @@ export default function Storage() {
 
   return (
     <div className="storage">
-      <div className="storage-header"></div>
+      <div className="storage-header">
+        <div className="storage-header-title">数据存储</div>
+      </div>
       <div className="storage-content">
         <div className="storage-content-left">
           <div className="storage-content-left-title">使用情况</div>

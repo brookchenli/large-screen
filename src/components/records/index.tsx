@@ -21,7 +21,9 @@ export default function Records() {
 
   return (
     <div className="records">
-      <div className="records-header"></div>
+      <div className="records-header">
+        <div className="records-header-title">记录条数</div>
+      </div>
       <div className="records-content">
         {recordData.map((item) => (
           <div className="records-content-item" key={item.label}>

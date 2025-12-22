@@ -1,5 +1,4 @@
 import "./index.less";
-import Panel from "@/components/panel";
 import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
 
@@ -70,8 +69,19 @@ export default function DailyCollection() {
     ],
   };
   return (
-    <Panel title="每日采集量">
-      <ReactECharts option={option} style={{ height: "100%", width: "100%" }} />
-    </Panel>
+    // <Panel title="每日采集量">
+    //   <ReactECharts option={option} style={{ height: "100%", width: "100%" }} />
+    // </Panel>
+    <div className="daily-collection">
+      <div className="daily-collection-header">
+        <div className="daily-collection-header-title">每日采集量</div>
+      </div>
+      <div className="daily-collection-content">
+        <ReactECharts
+          option={option}
+          style={{ height: "100%", width: "100%" }}
+        />
+      </div>
+    </div>
   );
 }

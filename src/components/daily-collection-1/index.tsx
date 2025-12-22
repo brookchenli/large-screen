@@ -1,7 +1,7 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
-
+import "./index.less";
 const DailyCollectionChart: React.FC = () => {
   const hours = Array.from({ length: 12 }, (_, i) => i + 1);
 
@@ -60,7 +60,17 @@ const DailyCollectionChart: React.FC = () => {
   };
 
   return (
-    <ReactECharts option={option} style={{ width: "100%", height: 300 }} />
+    <div className="daily-collection-1">
+      <div className="daily-collection-1-header">
+        <div className="daily-collection-1-header-title">每日采集量</div>
+      </div>
+      <div className="daily-collection-1-content">
+        <ReactECharts
+          option={option}
+          style={{ width: "100%", height: "100%" }}
+        />
+      </div>
+    </div>
   );
 };
 
