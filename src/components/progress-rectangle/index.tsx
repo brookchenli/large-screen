@@ -68,10 +68,10 @@ export default function ProgressRectangle({
           style={
             {
               width: `${secondValue.percentage}%`,
-              "--progress-color": secondValue.color,
             } as React.CSSProperties
           }
         >
+          <div className="progress-rectangle-border"></div>
           <div className="progress-rectangle-fill"></div>
         </div>
       )}

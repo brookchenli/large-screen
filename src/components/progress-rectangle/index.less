@@ -40,18 +40,51 @@
   }
 
   .progress-rectangle-item-secondary {
-    // 次要进度条：完整的平行四边形，纯色填充
+    // 次要进度条：完整的平行四边形，带边框和填充
     // 左侧进度条的右边：从 (100%, 0) 到 (calc(100% - 12px), 100%)，向右上方倾斜
     // 右侧进度条的左边：从 (12px, 0) 到 (0, 100%)，向左下方倾斜（与左侧右边完全吻合）
     // 右侧进度条的右边：从 (100%, 0) 到 (calc(100% - 12px), 100%)，向右上方倾斜
     // 左侧尖尖在下面（底部在左边0位置）
-    clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+    position: relative;
+    overflow: visible;
 
-    .progress-rectangle-fill {
+    // 边框层 - 完整的平行四边形边框
+    .progress-rectangle-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // 平行四边形：左上(12px,0) 右上(100%,0) 右下(calc(100% - 12px),100%) 左下(0,100%)
       clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
-      background-color: var(--progress-color);
-      border: none;
-      box-shadow: none;
+      border: 2px solid rgba(0, 176, 93, 1);
+      box-sizing: border-box;
+      pointer-events: none;
+      box-shadow: 0 0 8px rgba(0, 176, 93, 1);
+      background-color: transparent;
+      z-index: 2;
+    }
+
+    // 背景层 - 填充边框内部，无空隙
+    .progress-rectangle-fill {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      // 边框层：polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)
+      // 背景层需要完全填充边框内部，确保底部无空隙
+      // 背景层已偏移(2px, 2px)，clip-path相对于背景层本身
+      // 背景层的实际高度是 calc(100% - 4px)，所以底部坐标应该是 100%
+      clip-path: polygon(
+        calc(12px - 2px) 0,
+        calc(100% - 4px) 0,
+        calc(100% - 12px - 4px) 100%,
+        0 100%
+      );
+      background-color: rgba(0, 176, 93, 0.2);
+      z-index: 1;
+      box-sizing: border-box;
     }
   }
 }
