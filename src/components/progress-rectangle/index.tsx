@@ -1,96 +1,83 @@
+import React from "react";
 import "./index.less";
 
-interface ProgressRectangleProps {
-  values: {
-    percentage: number;
-    color: string;
-  }[];
-  total?: number;
-  width?: number | string; // 宽度，可以是数字（px）或字符串（如 "100%"）
+interface SkewProgressBarProps {
+  width?: number;
+  backgroundHeight?: number; // 背景高度
+  barHeight?: number; // 进度条高度
+  skew?: number;
+  leftPercent: number;
+  rightPercent: number;
 }
 
-export default function ProgressRectangle({
-  values = [
-    {
-      percentage: 50,
-      color: "#3877f2",
-    },
-    {
-      percentage: 30,
-      color: "#00FF7F",
-    },
-  ],
-  total = 100,
-  width = "100%",
-}: ProgressRectangleProps) {
-  // 确保两个值的总和不超过100%
-  const normalizedValues = values.map((item) => ({
-    ...item,
-    percentage: Math.min(item.percentage, total),
-  }));
+const ProgressRectangle: React.FC<SkewProgressBarProps> = ({
+  width = 600,
+  backgroundHeight = 20,
+  barHeight = 10,
+  skew = 18,
+  leftPercent,
+  rightPercent,
+}) => {
+  const totalPercent = leftPercent + rightPercent;
+  if (totalPercent > 100) {
+    console.warn("leftPercent + rightPercent 不能超过 100%");
+  }
 
-  const sum = normalizedValues.reduce((acc, item) => acc + item.percentage, 0);
-  const scale = sum > total ? total / sum : 1;
+  const offsetY = (backgroundHeight - barHeight) / 2;
 
-  const scaledValues = normalizedValues.map((item) => ({
-    ...item,
-    percentage: item.percentage * scale,
-  }));
+  const leftWidth = (width * leftPercent) / 100;
+  const rightWidth = (width * rightPercent) / 100;
 
-  // 计算每个进度条的宽度（基于百分比）
-  const [firstValue, secondValue] = scaledValues;
+  /**
+   * 左侧：左直右斜
+   */
+  const leftPoints = `
+    0,${offsetY}
+    ${leftWidth},${offsetY}
+    ${leftWidth - skew},${offsetY + barHeight}
+    0,${offsetY + barHeight}
+  `;
 
-  const widthStyle = typeof width === "number" ? `${width}px` : width;
+  /**
+   * 右侧：平行四边形（切口吻合）
+   */
+  const rightX = leftWidth;
+  const rightPoints = `
+    ${rightX + skew},${offsetY}
+    ${rightX + rightWidth + skew},${offsetY}
+    ${rightX + rightWidth},${offsetY + barHeight}
+    ${rightX},${offsetY + barHeight}
+  `;
 
   return (
-    <div
-      className="progress-rectangle"
-      style={{ width: widthStyle } as React.CSSProperties}
+    <svg
+      width={width + skew}
+      height={backgroundHeight}
+      viewBox={`0 0 ${width + skew} ${backgroundHeight}`}
     >
-      {/* 第一个进度条（主要，蓝色） */}
-      <div
-        className="progress-rectangle-item progress-rectangle-item-primary"
-        style={
-          {
-            width: `${firstValue.percentage}%`,
-            "--progress-color": firstValue.color,
-            "--progress-border-color": getLighterColor(firstValue.color),
-          } as React.CSSProperties
-        }
-      >
-        <div className="progress-rectangle-fill"></div>
-      </div>
+      {/* 背景轨道 */}
+      <rect
+        x={0}
+        y={0}
+        width={width}
+        height={backgroundHeight}
+        rx={2}
+        fill="rgba(129, 129, 129, 0.15)"
+        opacity={0.6}
+      />
 
-      {/* 第二个进度条（次要，绿色） */}
-      {secondValue && secondValue.percentage > 0 && (
-        <div
-          className="progress-rectangle-item progress-rectangle-item-secondary"
-          style={
-            {
-              width: `${secondValue.percentage}%`,
-            } as React.CSSProperties
-          }
-        >
-          <div className="progress-rectangle-border"></div>
-          <div className="progress-rectangle-fill"></div>
-        </div>
-      )}
-    </div>
+      {/* 左侧进度（处置） */}
+      <polygon points={leftPoints} fill="rgba(56, 119, 242, 1)" />
+
+      {/* 右侧进度（平行四边形 + 边框） */}
+      <polygon
+        points={rightPoints}
+        fill="rgba(0, 176, 93, 0.2)"
+        stroke="rgba(0, 176, 93, 1)"
+        strokeWidth={2}
+      />
+    </svg>
   );
-}
+};
 
-// 获取更亮的颜色用于边框发光效果
-function getLighterColor(color: string): string {
-  // 简单的颜色变亮处理
-  if (color.startsWith("#")) {
-    const r = parseInt(color.slice(1, 3), 16);
-    const g = parseInt(color.slice(3, 5), 16);
-    const b = parseInt(color.slice(5, 7), 16);
-
-    // 增加亮度
-    const lighten = (value: number) => Math.min(255, value + 60);
-
-    return `rgb(${lighten(r)}, ${lighten(g)}, ${lighten(b)})`;
-  }
-  return color;
-}
+export default ProgressRectangle;

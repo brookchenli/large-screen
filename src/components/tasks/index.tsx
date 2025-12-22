@@ -1,5 +1,5 @@
 import "./index.less";
-
+import ProgressRectangle from "@/components/progress-rectangle";
 export default function Records() {
   const tasks = [
     {
@@ -46,14 +46,11 @@ export default function Records() {
               </div>
             </div>
             <div className="tasks-item-bottom">
-              <div
-                className="tasks-item-bottom-blue"
-                style={{ width: `${(task.value1 / task.total) * 100}%` }}
-              ></div>
-              <div
-                className="tasks-item-bottom-green"
-                style={{ width: `${(task.value2 / task.total) * 100}%` }}
-              ></div>
+              <ProgressRectangle
+                leftPercent={(task.value1 / task.total) * 100}
+                rightPercent={(task.value2 / task.total) * 100}
+                width={430}
+              />
             </div>
           </div>
         ))}
