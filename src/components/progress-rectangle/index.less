@@ -1,0 +1,57 @@
+.progress-rectangle {
+  position: relative;
+  height: 20px;
+  background-color: rgba(129, 129, 129, 0.15);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  box-sizing: border-box;
+
+  .progress-rectangle-item {
+    position: relative;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    .progress-rectangle-fill {
+      width: 100%;
+      height: 100%;
+      background-color: var(--progress-color);
+      border: 2px solid var(--progress-border-color);
+      box-sizing: border-box;
+      box-shadow: 0 0 8px var(--progress-border-color);
+    }
+  }
+
+  .progress-rectangle-item-primary {
+    // 主要进度条：左边垂直，右边向右上方倾斜
+    // 右边从 (100%, 0) 到 (calc(100% - 12px), 100%)，向右上方倾斜12px
+    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+
+    .progress-rectangle-fill {
+      clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .progress-rectangle-item-secondary {
+    // 次要进度条：完整的平行四边形，纯色填充
+    // 左侧进度条的右边：从 (100%, 0) 到 (calc(100% - 12px), 100%)，向右上方倾斜
+    // 右侧进度条的左边：从 (12px, 0) 到 (0, 100%)，向左下方倾斜（与左侧右边完全吻合）
+    // 右侧进度条的右边：从 (100%, 0) 到 (calc(100% - 12px), 100%)，向右上方倾斜
+    // 左侧尖尖在下面（底部在左边0位置）
+    clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+
+    .progress-rectangle-fill {
+      clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+      background-color: var(--progress-color);
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
