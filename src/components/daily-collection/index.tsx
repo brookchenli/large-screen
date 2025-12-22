@@ -1,5 +1,6 @@
 import "./index.less";
 import Panel from "@/components/panel";
+import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
 
 export default function DailyCollection() {
@@ -40,11 +41,27 @@ export default function DailyCollection() {
     },
     yAxis: {
       type: "value",
+      splitLine: {
+        show: false,
+      },
     },
     series: [
       {
         name: "PV",
         type: "line",
+        areaStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: "rgba(56, 119, 242, 0.5)",
+            },
+            {
+              offset: 1,
+              color: "rgba(0, 176, 93, 0.2)",
+            },
+          ]),
+        },
+        smooth: true,
         data: [
           120, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150, 80, 70,
           10,
