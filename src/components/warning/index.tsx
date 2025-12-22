@@ -1,10 +1,12 @@
 import "./index.less";
-import Radar from "@/components/radar";
+import Radar from "@/components/radar/sector";
 import warningIcon1 from "@/assets/warning-icon1.png";
 import warningIcon2 from "@/assets/warning-icon1.png";
 import warningIcon3 from "@/assets/warning-icon1.png";
 import warningIcon4 from "@/assets/warning-icon1.png";
 import warningIcon5 from "@/assets/warning-icon1.png";
+import ProgressStep from "@/components/progress-step";
+import StepProgressBar from "@/components/progress-step/step-progress-bar";
 
 export default function Warning() {
   const data = [
@@ -41,32 +43,57 @@ export default function Warning() {
     {
       label: "标签名称1",
       icon: warningIcon1,
-      value: 100,
-      percentage: 50,
+      value: 50,
+      percentage: 20,
+      gradientColors: {
+        light: "#a5f3fc",
+        middle: "#22d3ee",
+        dark: "#0f766e",
+      },
     },
     {
       label: "标签名称2",
       icon: warningIcon1,
-      value: 100,
+      value: 50,
       percentage: 50,
+      gradientColors: {
+        light: "#a5f3fc",
+        middle: "#22d3ee",
+        dark: "#0f766e",
+      },
     },
     {
       label: "标签名称3",
       icon: warningIcon1,
-      value: 100,
-      percentage: 50,
+      value: 50,
+      percentage: 30,
+      gradientColors: {
+        light: "#FFE7BA",
+        middle: "#FFD180",
+        dark: "#FFBB38",
+      },
     },
     {
       label: "标签名称4",
       icon: warningIcon1,
-      value: 100,
-      percentage: 50,
+      value: 50,
+      percentage: 10,
+      gradientColors: {
+        light: "#a5f3fc",
+        middle: "#22d3ee",
+        dark: "#0f766e",
+      },
     },
     {
       label: "标签名称5",
       icon: warningIcon1,
-      value: 100,
-      percentage: 50,
+      value: 50,
+      percentage: 2,
+      gradientColors: {
+        light: "#FF0000",
+        middle: "#FF0000",
+        dark: "#FF0000",
+      },
     },
   ];
   return (
@@ -101,7 +128,17 @@ export default function Warning() {
             <div className="warning-content-section2-item-label">
               {item.label}
             </div>
-            <div className="warning-content-section2-item-percentage"></div>
+            <div className="warning-content-section2-item-percentage">
+              <StepProgressBar
+                total={item.value}
+                current={item.percentage}
+                width={263}
+                barHeight={6}
+                containerHeight={14}
+                gap={3}
+                gradientColors={item.gradientColors}
+              />
+            </div>
             <div className="warning-content-section2-item-value">
               {item.value}
             </div>
