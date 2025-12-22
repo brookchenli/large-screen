@@ -1,64 +1,67 @@
-import "./index.less";
+import React from "react";
 import ReactECharts from "echarts-for-react";
+import * as echarts from "echarts";
 
-export default function DailyCollection1() {
+const DailyCollectionChart: React.FC = () => {
+  const hours = Array.from({ length: 12 }, (_, i) => i + 1);
+
+  // 单组每日采集量数据
+  const collectData = [30, 85, 0, 28, 60, 20, 35, 26, 45, 0, 90, 45];
+
   const option = {
-    title: {
-      show: false,
-    },
-    tooltip: {
-      trigger: "axis",
+    backgroundColor: "transparent",
+    grid: {
+      left: 40,
+      right: 20,
+      top: 20,
+      bottom: 30,
     },
     xAxis: {
       type: "category",
-      data: [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-      ],
+      data: hours.map((h) => `${h}`),
+      axisLine: {
+        lineStyle: { color: "#666" },
+      },
+      axisTick: { show: false },
     },
     yAxis: {
       type: "value",
-    },
-    grid: {
-      left: "0%",
-      right: "0%",
-      bottom: "3%",
-      top: "5%",
+      splitLine: {
+        lineStyle: {
+          color: "rgba(255,255,255,0.15)",
+        },
+      },
     },
     series: [
       {
-        name: "PV",
+        name: "采集量",
         type: "line",
-        data: [
-          120, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150, 80, 70,
-          10,
-        ],
+        smooth: true,
+        symbol: "none",
+        data: collectData,
+        lineStyle: {
+          width: 0, // 🔑 隐藏折线，只要面积
+        },
+        areaStyle: {
+          color: new echarts.graphic.LinearGradient(
+            0,
+            0,
+            0,
+            1, // 上 → 下
+            [
+              { offset: 0, color: "rgba(59,130,246,0.85)" },
+              { offset: 0.6, color: "rgba(59,130,246,0.35)" },
+              { offset: 1, color: "rgba(59,130,246,0.05)" },
+            ]
+          ),
+        },
       },
     ],
   };
+
   return (
-    <div className="daily-collection1">
-      <div className="daily-collection-header"></div>
-      <div className="daily-collection-content">
-        <ReactECharts
-          option={option}
-          style={{ height: "100%", width: "100%" }}
-        />
-      </div>
-    </div>
+    <ReactECharts option={option} style={{ width: "100%", height: 300 }} />
   );
-}
+};
+
+export default DailyCollectionChart;
