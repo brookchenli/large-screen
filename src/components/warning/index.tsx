@@ -1,5 +1,5 @@
 import "./index.less";
-import Radar from "@/components/radar/sector";
+import Radar from "@/components/radar";
 import warningIcon1 from "@/assets/warning-icon1.png";
 import warningIcon2 from "@/assets/warning-icon1.png";
 import warningIcon3 from "@/assets/warning-icon1.png";
