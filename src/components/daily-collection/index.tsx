@@ -1,8 +1,11 @@
 import "./index.less";
 import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
-
+import mock from "@/assets/mock.json";
 export default function DailyCollection() {
+  const xData = mock.data.left_side.row3.xData;
+  const yData = mock.data.left_side.row3.yData;
+  const title = mock.data.left_side.row3.title;
   const option = {
     title: {
       text: "每日采集量1",
@@ -19,24 +22,7 @@ export default function DailyCollection() {
     },
     xAxis: {
       type: "category",
-      data: [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-      ],
+      data: xData,
     },
     yAxis: {
       type: "value",
@@ -61,10 +47,7 @@ export default function DailyCollection() {
           ]),
         },
         smooth: true,
-        data: [
-          120, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150, 80, 70,
-          10,
-        ],
+        data: yData,
       },
     ],
   };

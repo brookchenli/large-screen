@@ -1,26 +1,23 @@
 import "./index.less";
 import ProgressCircle from "@/components/progress-circle";
+import mock from "@/assets/mock.json";
 
 interface BarItem {
   label: string;
   value: number;
+  total: number;
   color: string;
-  percentage: number;
 }
 
 export default function Storage() {
   // 示例数据，实际应该从 API 获取
-  const usagePercentage = 70.0;
-  const barData: BarItem[] = [
-    { label: "标签名称1", value: 201, color: "#00BFFF", percentage: 50.0 }, // 蓝色
-    { label: "标签名称2", value: 178, color: "#00FF7F", percentage: 30.0 }, // 绿色
-    { label: "标签名称3", value: 189, color: "#FFA500", percentage: 50.0 }, // 橙色
-  ];
-
+  const usagePercentage = mock.data.left_side.row1.col1.percentage as number;
+  const barData: BarItem[] = mock.data.left_side.row1.col1.data as BarItem[];
+  const title = mock.data.left_side.row1.col1.title;
   return (
     <div className="storage">
       <div className="storage-header">
-        <div className="storage-header-title">数据存储</div>
+        <div className="storage-header-title">{title}</div>
       </div>
       <div className="storage-content">
         <div className="storage-content-left">
@@ -45,7 +42,7 @@ export default function Storage() {
                 <div
                   className="storage-item-bottom-progress"
                   style={{
-                    width: `${item.percentage}%`,
+                    width: `${(item.value / item.total) * 100}%`,
                     backgroundColor: item.color,
                   }}
                 ></div>

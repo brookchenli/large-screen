@@ -1,33 +1,21 @@
 import "./index.less";
 import ProgressRectangle from "@/components/progress-rectangle";
+import mock from "@/assets/mock.json";
+
+interface TaskItem {
+  label: string;
+  value1: number;
+  value2: number;
+  total: number;
+  index: string;
+}
 export default function Records() {
-  const tasks = [
-    {
-      label: "任务1",
-      value1: 80,
-      value2: 20,
-      total: 200,
-      index: "01",
-    },
-    {
-      label: "任务2",
-      value1: 80,
-      value2: 20,
-      total: 300,
-      index: "02",
-    },
-    {
-      label: "任务3",
-      value1: 80,
-      value2: 20,
-      total: 100,
-      index: "03",
-    },
-  ];
+  const title = mock.data.left_side.row2.col1.title;
+  const tasks = mock.data.left_side.row2.col1.data as TaskItem[];
   return (
     <div className="tasks">
       <div className="tasks-header">
-        <div className="tasks-header-title">分任务统计</div>
+        <div className="tasks-header-title">{title}</div>
       </div>
       <div className="tasks-content">
         {tasks.map((task, index) => (

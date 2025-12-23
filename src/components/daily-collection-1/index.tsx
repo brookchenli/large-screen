@@ -2,11 +2,14 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
 import "./index.less";
+import mock from "@/assets/mock.json";
 const DailyCollectionChart: React.FC = () => {
   const hours = Array.from({ length: 12 }, (_, i) => i + 1);
+  const yData = mock.data.left_side.row4.yData;
+  const title = mock.data.left_side.row4.title;
 
   // 单组每日采集量数据
-  const collectData = [30, 85, 0, 28, 60, 20, 35, 26, 45, 0, 90, 45];
+  const collectData = yData;
 
   const option = {
     backgroundColor: "transparent",
@@ -62,7 +65,7 @@ const DailyCollectionChart: React.FC = () => {
   return (
     <div className="daily-collection-1">
       <div className="daily-collection-1-header">
-        <div className="daily-collection-1-header-title">每日采集量</div>
+        <div className="daily-collection-1-header-title">{title}</div>
       </div>
       <div className="daily-collection-1-content">
         <ReactECharts

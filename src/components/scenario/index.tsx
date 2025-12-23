@@ -1,42 +1,28 @@
 import "./index.less";
+import mock from "@/assets/mock.json";
 
+interface ScenarioItem {
+  title: string;
+  time: string;
+  color: string;
+  status: string;
+}
 export default function Scenario() {
-  const data = [
-    {
-      title: "Scenario 1",
-      time: "12:00:00",
-      color: "red",
-      status: "监控中",
-    },
-    {
-      title: "Scenario 2",
-      time: "12:00:00",
-      color: "blue",
-      status: "已结束",
-    },
-    {
-      title: "Scenario 3",
-      time: "12:00:00",
-      color: "green",
-      status: "已结束",
-    },
-    {
-      title: "Scenario 4",
-      time: "12:00:00",
-      color: "yellow",
-      status: "已结束",
-    },
-  ];
+  const data = mock.data.right_side.row2.data as ScenarioItem[];
+  const title = mock.data.right_side.row2.title;
   return (
     <div className="scenario">
       <div className="scenario-header">
-        <div className="scenario-header-title">场景展示</div>
+        <div className="scenario-header-title">{title}</div>
       </div>
       <div className="scenario-content">
-        {data.map((item) => (
-          <div className="scenario-content-item" key={item.title}>
+        {data.map((item, index) => (
+          <div className="scenario-content-item" key={index}>
             <div className="scenario-content-item-status">
-              <div className="scenario-content-item-status-icon"></div>
+              <div
+                className="scenario-content-item-status-icon"
+                style={{ backgroundColor: item.color }}
+              ></div>
               <div className="scenario-content-item-status-text">
                 {item.status}
               </div>

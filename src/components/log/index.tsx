@@ -1,62 +1,15 @@
 import "./index.less";
+import mock from "@/assets/mock.json";
 
 export default function Log() {
-  const data = [
-    {
-      position: "xxx",
-      ism: "xxx",
-      suspected: "xxx",
-      IGG: "xxx",
-    },
-    {
-      position: "THE BRONX1",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-    {
-      position: "THE BRONX2",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-    {
-      position: "THE BRONX3",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-    {
-      position: "THE BRONX4",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-    {
-      position: "THE BRONX5",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-    {
-      position: "THE BRONX6",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-    {
-      position: "THE BRONX7",
-      ism: "1",
-      suspected: "2",
-      IGG: "1",
-    },
-  ];
+  const data = mock.data.right_side.row1.col2.data as LogItem[];
+  const title = mock.data.right_side.row1.col2.title;
 
   const focusedIndex = 4;
   return (
     <div className="log">
       <div className="log-header">
-        <div className="log-header-title">日志数据</div>
+        <div className="log-header-title">{title}</div>
       </div>
       <div className="log-content">
         {data.map((item, index) => {

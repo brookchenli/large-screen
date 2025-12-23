@@ -1,0 +1,319 @@
+{
+  "version": "1.0.0",
+  "data": {
+    "left_side": {
+      "row1": {
+        "desc": "第一行",
+        "col1": {
+          "desc": "第一行, 第一列, 存储相关, percentage 为左边水球图的百分比",
+          "title": "数据存储",
+          "percentage": 30,
+          "data": [
+            {
+              "label": "标签名称1",
+              "value": 35,
+              "total": 200,
+              "color": "rgba(56, 119, 242, 1)"
+            },
+            {
+              "label": "标签名称2",
+              "value": 180,
+              "total": 200,
+              "color": "rgba(0, 176, 93, 1)"
+            },
+            {
+              "label": "标签名称3",
+              "value": 123,
+              "total": 200,
+              "color": "rgba(217, 176, 57, 1)"
+            }
+          ]
+        },
+        "col2": {
+          "desc": "第一行, 第二列, 记录条数相关",
+          "title": "记录条数",
+          "percentage": 30,
+          "data": [
+            {
+              "label": "标签名称1",
+              "value": 35
+            },
+            {
+              "label": "标签名称2",
+              "value": 180
+            },
+            {
+              "label": "标签名称3",
+              "value": 123
+            },
+            { "label": "标签名称4", "value": 123 }
+          ]
+        }
+      },
+      "row2": {
+        "col1": {
+          "desc": "第二行, 第一列, 分任务统计, 双进度条总和不能超过总量",
+          "title": "分任务统计",
+          "data": [
+            {
+              "label": "任务1",
+              "value1": 80,
+              "value2": 20,
+              "total": 200,
+              "index": "01"
+            },
+            {
+              "label": "任务2",
+              "value1": 30,
+              "value2": 70,
+              "total": 200,
+              "index": "02"
+            },
+            {
+              "label": "任务3",
+              "value1": 100,
+              "value2": 50,
+              "total": 200,
+              "index": "03"
+            }
+          ]
+        },
+        "col2": {
+          "desc": "第二行, 第二列, 分员工统计",
+          "title": "分员工统计",
+          "data": [
+            {
+              "label": "标签名称1",
+              "value": 23456,
+              "total": 100000,
+              "index": "1"
+            },
+            {
+              "label": "标签名称2",
+              "value": 32124,
+              "total": 100000,
+              "index": "2"
+            },
+            {
+              "label": "标签名称3",
+              "value": 2311,
+              "total": 10000,
+              "index": "3"
+            },
+            {
+              "label": "标签名称4",
+              "value": 2421,
+              "total": 10000,
+              "index": "4"
+            },
+            {
+              "label": "标签名称5",
+              "value": 4124,
+              "total": 100000,
+              "index": "5"
+            }
+          ]
+        }
+      },
+      "row3": {
+        "desc": "第三行, 包含每日采集量",
+        "title": "每日采集量",
+        "xData": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "yData": [120, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150]
+      },
+      "row4": {
+        "desc": "第四行, 包含每日采集量2",
+        "title": "每日采集量",
+        "yData": [200, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150]
+      }
+    },
+    "right_side": {
+      "row1": {
+        "desc": "第一行, 包含警告提示和日志数据",
+        "col1": {
+          "desc": "第一行, 第一列, 包含警告提示",
+          "title": "警告提示",
+          "data1": [
+            {
+              "label": "标签名称1",
+              "value": 100,
+              "text": "正常运行设备",
+              "percentage": 10,
+              "unit": "台"
+            },
+            {
+              "label": "标签名称2",
+              "value": 200,
+              "text": "异常设备",
+              "percentage": 20,
+              "unit": "台"
+            },
+            {
+              "label": "标签名称3",
+              "value": 300,
+              "text": "离线设备",
+              "percentage": 50,
+              "unit": "台"
+            },
+            {
+              "label": "标签名称4",
+              "value": 400,
+              "text": "设备总数",
+              "percentage": 80,
+              "unit": "台"
+            }
+          ],
+          "data2": [
+            {
+              "label": "标签名称1",
+              "value": 50,
+              "percentage": 20,
+              "gradientColors": {
+                "light": "#a5f3fc",
+                "middle": "#22d3ee",
+                "dark": "#0f766e"
+              }
+            },
+            {
+              "label": "标签名称2",
+              "value": 50,
+              "percentage": 50,
+              "gradientColors": {
+                "light": "#a5f3fc",
+                "middle": "#22d3ee",
+                "dark": "#0f766e"
+              }
+            },
+            {
+              "label": "标签名称3",
+              "value": 50,
+              "percentage": 30,
+              "gradientColors": {
+                "light": "#FFE7BA",
+                "middle": "#FFD180",
+                "dark": "#FFBB38"
+              }
+            },
+            {
+              "label": "标签名称4",
+              "value": 50,
+              "percentage": 10,
+              "gradientColors": {
+                "light": "#a5f3fc",
+                "middle": "#22d3ee",
+                "dark": "#0f766e"
+              }
+            },
+            {
+              "label": "标签名称5",
+              "value": 50,
+              "percentage": 2,
+              "gradientColors": {
+                "light": "#FF0000",
+                "middle": "#FF0000",
+                "dark": "#FF0000"
+              }
+            }
+          ]
+        },
+        "col2": {
+          "desc": "第一行, 第二列, 包含日志数据, data中第一个数据为占位符",
+          "title": "日志数据",
+          "data": [
+            {
+              "position": "xxx-占位符, 请忽略",
+              "ism": "xxx-占位符, 请忽略",
+              "suspected": "xxx-占位符, 请忽略",
+              "IGG": "xxx-占位符, 请忽略"
+            },
+            {
+              "position": "THE BRONX1",
+              "ism": "2",
+              "suspected": "3",
+              "IGG": "4"
+            },
+            {
+              "position": "THE BRONX2",
+              "ism": "3",
+              "suspected": "2",
+              "IGG": "1"
+            },
+            {
+              "position": "THE BRONX3",
+              "ism": "1",
+              "suspected": "2",
+              "IGG": "1"
+            },
+            {
+              "position": "THE BRONX4",
+              "ism": "1",
+              "suspected": "2",
+              "IGG": "1"
+            },
+            {
+              "position": "THE BRONX5",
+              "ism": "1",
+              "suspected": "2",
+              "IGG": "1"
+            },
+            {
+              "position": "THE BRONX6",
+              "ism": "1",
+              "suspected": "2",
+              "IGG": "1"
+            },
+            {
+              "position": "THE BRONX7",
+              "ism": "1",
+              "suspected": "2",
+              "IGG": "1"
+            }
+          ]
+        }
+      },
+      "row2": {
+        "desc": "第二行, 包含场景展示",
+        "title": "场景展示",
+        "data": [
+          {
+            "title": "场景1",
+            "time": "12:00:00",
+            "color": "red",
+            "status": "监控中"
+          },
+          {
+            "title": "场景2",
+            "time": "12:00:00",
+            "color": "blue",
+            "status": "已结束"
+          },
+          {
+            "title": "场景3",
+            "time": "12:00:00",
+            "color": "green",
+            "status": "已结束"
+          },
+          {
+            "title": "场景4",
+            "time": "12:00:00",
+            "color": "yellow",
+            "status": "已结束"
+          }
+        ]
+      }
+    }
+  }
+}
