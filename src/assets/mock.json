@@ -1,5 +1,10 @@
 {
   "version": "1.0.0",
+  "weather": {
+    "desc": "可以通过https://dev.qweather.com/docs/api/geoapi/city-lookup/ 查询location, 默认北京",
+    "key": "5663f610db044c70bc2fa9464161706b",
+    "location": "101010100"
+  },
   "data": {
     "left_side": {
       "row1": {

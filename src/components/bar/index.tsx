@@ -1,11 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./index.less";
-import weatherIcon from "@/assets/多云.png";
 import thermometerIcon from "@/assets/温度计.png";
 import humidityIcon from "@/assets/空气湿度.png";
+import mock from "@/assets/mock.json";
 
+// 定义组件接收的 Props 类型
+import WeatherIcon from "./weather-icons";
 export default function Bar() {
   const [time, setTime] = useState(new Date());
+  const [temperature, setTemperature] = useState(0);
+  const [humidity, setHumidity] = useState(0);
+  const [weatherIcon, setWeatherIcon] = useState("100");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -14,6 +19,30 @@ export default function Bar() {
 
     return () => clearInterval(timer);
   }, []);
+
+  const getWeather = useCallback(async () => {
+    const { key, location } = mock.weather;
+    const url = `https://devapi.qweather.com/v7/weather/now?key=${key}&location=${location}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.now;
+  }, []);
+
+  useEffect(() => {
+    getWeather().then((data) => {
+      setTemperature(data.temp);
+      setHumidity(data.humidity);
+      setWeatherIcon(data.icon);
+    });
+    const timer = setInterval(() => {
+      const date = new Date();
+      const minutes = date.getMinutes();
+      if (minutes === 30) {
+        getWeather();
+      }
+    }, 1000 * 60 * 30);
+    return () => clearInterval(timer);
+  }, [getWeather]);
 
   const formatTime = (date: Date) => {
     const hours = date.getHours().toString().padStart(2, "0");
@@ -34,10 +63,6 @@ export default function Bar() {
     return `星期${weekdays[date.getDay()]}`;
   };
 
-  // 示例数据，实际应该从 API 获取
-  const temperature = -1;
-  const humidity = 36;
-
   return (
     <div className="bar">
       <div className="bar-time">{formatTime(time)}</div>
@@ -45,7 +70,24 @@ export default function Bar() {
       <div className="bar-weekday">{getWeekday(time)}</div>
       <div className="bar-separator"></div>
       <div className="bar-weather">
-        <img src={weatherIcon} alt="weather" className="bar-weather-icon" />
+        {/* <img src={weatherIcon} alt="weather" className="bar-weather-icon" /> */}
+        {/* <DynamicWeatherIcon
+          code={weatherIcon}
+          size={22}
+          color={weatherIcon === "100" ? "#FFD700" : "#888"}
+        /> */}
+        {/* <img
+          src={`https://icons.qweather.com/assets/icons/${weatherIcon}.svg`}
+          alt={""}
+          width={22}
+          height={22}
+          className="bar-weather-icon"
+        /> */}
+        <WeatherIcon
+          icon={weatherIcon}
+          size={22}
+          color={weatherIcon === "100" ? "#FFD700" : "#888"}
+        />
       </div>
       <div className="bar-temperature">
         <img src={thermometerIcon} alt="thermometer" className="bar-icon" />
