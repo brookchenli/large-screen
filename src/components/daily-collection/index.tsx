@@ -57,7 +57,7 @@ export default function DailyCollection() {
     // </Panel>
     <div className="daily-collection">
       <div className="daily-collection-header">
-        <div className="daily-collection-header-title">每日采集量</div>
+        <div className="daily-collection-header-title">{title}</div>
       </div>
       <div className="daily-collection-content">
         <ReactECharts

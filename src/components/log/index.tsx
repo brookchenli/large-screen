@@ -1,6 +1,13 @@
 import "./index.less";
 import mock from "@/assets/mock.json";
 
+interface LogItem {
+  position: string;
+  ism: string;
+  suspected: string;
+  IGG: string;
+}
+
 export default function Log() {
   const data = mock.data.right_side.row1.col2.data as LogItem[];
   const title = mock.data.right_side.row1.col2.title;

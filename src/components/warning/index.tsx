@@ -5,7 +5,6 @@ import warningIcon2 from "@/assets/warning-icon2.png";
 import warningIcon3 from "@/assets/warning-icon3.png";
 import warningIcon4 from "@/assets/warning-icon4.png";
 import warningIcon5 from "@/assets/warning-icon5.png";
-import ProgressStep from "@/components/progress-step";
 import StepProgressBar from "@/components/progress-step/step-progress-bar";
 import mock from "@/assets/mock.json";
 
@@ -42,7 +41,7 @@ export default function Warning() {
   return (
     <div className="warning">
       <div className="warning-header">
-        <div className="warning-header-title">警告提示</div>
+        <div className="warning-header-title">{title}</div>
       </div>
       <div className="warning-content-section1">
         {data1.map((item) => (
