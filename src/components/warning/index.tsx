@@ -7,7 +7,7 @@ import warningIcon4 from "@/assets/warning-icon4.png";
 import warningIcon5 from "@/assets/warning-icon5.png";
 import StepProgressBar from "@/components/progress-step/step-progress-bar";
 import mock from "@/assets/mock.json";
-
+import Panel from "../panel";
 interface WarningItem {
   label: string;
   value: number;
@@ -39,10 +39,7 @@ export default function Warning() {
     warningIcon5,
   ];
   return (
-    <div className="warning">
-      <div className="warning-header">
-        <div className="warning-header-title">{title}</div>
-      </div>
+    <Panel classNames="warning" title={title}>
       <div className="warning-content-section1">
         {data1.map((item) => (
           <div className="warning-content-section1-item" key={item.label}>
@@ -89,6 +86,6 @@ export default function Warning() {
           </div>
         ))}
       </div>
-    </div>
+    </Panel>
   );
 }

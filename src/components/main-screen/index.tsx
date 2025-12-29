@@ -12,8 +12,8 @@ const Index = () => {
       </div>
       <div className="main-screen-content">
         <LeftSide />
-        {/* <Middle />
-        <RightSide /> */}
+        <Middle />
+        <RightSide />
       </div>
     </div>
   );

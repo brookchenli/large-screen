@@ -1,6 +1,6 @@
 import "./index.less";
 import mock from "@/assets/mock.json";
-
+import Panel from "../panel";
 interface LogItem {
   position: string;
   ism: string;
@@ -14,10 +14,7 @@ export default function Log() {
 
   const focusedIndex = 4;
   return (
-    <div className="log">
-      <div className="log-header">
-        <div className="log-header-title">{title}</div>
-      </div>
+    <Panel classNames="log" title={title}>
       <div className="log-content">
         {data.map((item, index) => {
           if (index === 0) {
@@ -62,6 +59,6 @@ export default function Log() {
           }
         })}
       </div>
-    </div>
+    </Panel>
   );
 }

@@ -1,6 +1,6 @@
 import "./index.less";
 import mock from "@/assets/mock.json";
-
+import Panel from "../panel";
 interface ScenarioItem {
   title: string;
   time: string;
@@ -11,10 +11,7 @@ export default function Scenario() {
   const data = mock.data.right_side.row2.data as ScenarioItem[];
   const title = mock.data.right_side.row2.title;
   return (
-    <div className="scenario">
-      <div className="scenario-header">
-        <div className="scenario-header-title">{title}</div>
-      </div>
+    <Panel classNames="scenario" title={title}>
       <div className="scenario-content">
         {data.map((item, index) => (
           <div className="scenario-content-item" key={index}>
@@ -39,6 +36,6 @@ export default function Scenario() {
           </div>
         ))}
       </div>
-    </div>
+    </Panel>
   );
 }

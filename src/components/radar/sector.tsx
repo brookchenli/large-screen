@@ -11,7 +11,7 @@ interface SectorProps {
 }
 
 const Sector: React.FC<SectorProps> = ({
-  radius = 37,
+  radius = 56,
   angle,
   startAngle = -90,
   gradientId = "sectorGradient",
