@@ -1,6 +1,7 @@
 import "./index.less";
 import ProgressRectangle from "@/components/progress-rectangle";
 import mock from "@/assets/mock.json";
+import Panel from "../panel";
 
 interface TaskItem {
   label: string;
@@ -13,10 +14,7 @@ export default function Records() {
   const title = mock.data.left_side.row2.col1.title;
   const tasks = mock.data.left_side.row2.col1.data as TaskItem[];
   return (
-    <div className="tasks">
-      <div className="tasks-header">
-        <div className="tasks-header-title">{title}</div>
-      </div>
+    <Panel classNames="tasks" title={title}>
       <div className="tasks-content">
         {tasks.map((task, index) => (
           <div className="tasks-item" key={index}>
@@ -39,12 +37,12 @@ export default function Records() {
               <ProgressRectangle
                 leftPercent={(task.value1 / task.total) * 100}
                 rightPercent={(task.value2 / task.total) * 100}
-                width={430}
+                width={650}
               />
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </Panel>
   );
 }

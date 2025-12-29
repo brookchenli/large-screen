@@ -1,25 +1,36 @@
 .panel {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  //   background-color: blue;
+  // background-color: blue;
 
   .panel-header {
     width: 100%;
-    height: 52px;
-    // background-color: red;
-
+    height: 78px;
+    background-color: green;
+    position: relative;
     .panel-header-icon {
       width: 100%;
       height: 100%;
+    }
+
+    .panel-title {
+      position: absolute;
+      top: 12px;
+      left: 60px;
+      line-height: 42px;
+      letter-spacing: 0.4px;
+
+      font-family: "PingFang SC";
+      font-size: 31px;
+      font-weight: 400;
+      color: #ffffff;
     }
   }
 
   .panel-content {
     width: 100%;
-    flex: 1;
-    // background-color: green;
+    margin-top: 30px;
+    height: calc(100% - 118px);
+    // background-color: red;
   }
 }

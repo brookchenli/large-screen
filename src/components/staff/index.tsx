@@ -4,7 +4,7 @@ import staffIcon2 from "@/assets/prize-2.png";
 import staffIcon3 from "@/assets/prize-3.png";
 import staffIcon4 from "@/assets/prize-4.png";
 import mock from "@/assets/mock.json";
-
+import Panel from "../panel";
 interface StaffItem {
   label: string;
   value: number;
@@ -19,10 +19,7 @@ export default function Staff() {
   const colors = ["#3877f2", "#00BFFF", "#00FF7F", "#FFA500", "#FF0000"];
 
   return (
-    <div className="staff">
-      <div className="staff-header">
-        <div className="staff-header-title">{title}</div>
-      </div>
+    <Panel classNames="staff" title={title}>
       <div className="staff-content">
         {staffData.map((staff, index) => (
           <div className="staff-item" key={index}>
@@ -48,6 +45,6 @@ export default function Staff() {
           </div>
         ))}
       </div>
-    </div>
+    </Panel>
   );
 }

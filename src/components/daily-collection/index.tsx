@@ -2,6 +2,7 @@ import "./index.less";
 import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
 import mock from "@/assets/mock.json";
+import Panel from "../panel";
 export default function DailyCollection() {
   const xData = mock.data.left_side.row3.xData;
   const yData = mock.data.left_side.row3.yData;
@@ -52,19 +53,13 @@ export default function DailyCollection() {
     ],
   };
   return (
-    // <Panel title="每日采集量">
-    //   <ReactECharts option={option} style={{ height: "100%", width: "100%" }} />
-    // </Panel>
-    <div className="daily-collection">
-      <div className="daily-collection-header">
-        <div className="daily-collection-header-title">{title}</div>
-      </div>
+    <Panel classNames="daily-collection" title={title}>
       <div className="daily-collection-content">
         <ReactECharts
           option={option}
           style={{ height: "100%", width: "100%" }}
         />
       </div>
-    </div>
+    </Panel>
   );
 }

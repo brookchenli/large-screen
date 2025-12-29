@@ -5,6 +5,7 @@ import recordsIcon2 from "@/assets/records_icon2.png";
 import recordsIcon3 from "@/assets/records_icon3.png";
 import recordsIcon4 from "@/assets/records_icon4.png";
 import mock from "@/assets/mock.json";
+import Panel from "@/components/panel";
 interface RecordItem {
   label: string;
   value: number;
@@ -19,7 +20,7 @@ export default function Records() {
     .data as RecordItem[];
 
   return (
-    <div className="records">
+    <Panel title={title} classNames="records">
       <div className="records-header">
         <div className="records-header-title">{title}</div>
       </div>
@@ -41,6 +42,6 @@ export default function Records() {
           </div>
         ))}
       </div>
-    </div>
+    </Panel>
   );
 }

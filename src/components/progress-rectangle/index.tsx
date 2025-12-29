@@ -12,9 +12,9 @@ interface SkewProgressBarProps {
 
 const ProgressRectangle: React.FC<SkewProgressBarProps> = ({
   width = 600,
-  backgroundHeight = 20,
-  barHeight = 10,
-  skew = 18,
+  backgroundHeight = 30,
+  barHeight = 15,
+  skew = 27,
   leftPercent,
   rightPercent,
 }) => {

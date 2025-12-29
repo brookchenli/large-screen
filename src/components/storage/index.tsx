@@ -1,6 +1,7 @@
 import "./index.less";
 import ProgressCircle from "@/components/progress-circle";
 import mock from "@/assets/mock.json";
+import Panel from "../panel";
 
 interface BarItem {
   label: string;
@@ -15,17 +16,14 @@ export default function Storage() {
   const barData: BarItem[] = mock.data.left_side.row1.col1.data as BarItem[];
   const title = mock.data.left_side.row1.col1.title;
   return (
-    <div className="storage">
-      <div className="storage-header">
-        <div className="storage-header-title">{title}</div>
-      </div>
+    <Panel title={title} classNames="storage">
       <div className="storage-content">
         <div className="storage-content-left">
           <div className="storage-content-left-title">使用情况</div>
           <div className="storage-content-left-content">
             <ProgressCircle
               percentage={usagePercentage}
-              size={120}
+              size={180}
               ringColor="#3877f2"
               color="#3877f2"
             />
@@ -51,6 +49,6 @@ export default function Storage() {
           ))}
         </div>
       </div>
-    </div>
+    </Panel>
   );
 }

@@ -3,6 +3,7 @@ import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
 import "./index.less";
 import mock from "@/assets/mock.json";
+import Panel from "../panel";
 const DailyCollectionChart: React.FC = () => {
   const hours = Array.from({ length: 12 }, (_, i) => i + 1);
   const yData = mock.data.left_side.row4.yData;
@@ -63,17 +64,14 @@ const DailyCollectionChart: React.FC = () => {
   };
 
   return (
-    <div className="daily-collection-1">
-      <div className="daily-collection-1-header">
-        <div className="daily-collection-1-header-title">{title}</div>
-      </div>
+    <Panel classNames="daily-collection-1" title={title}>
       <div className="daily-collection-1-content">
         <ReactECharts
           option={option}
           style={{ width: "100%", height: "100%" }}
         />
       </div>
-    </div>
+    </Panel>
   );
 };
 

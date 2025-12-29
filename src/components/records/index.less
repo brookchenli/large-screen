@@ -1,59 +1,31 @@
 .records {
-  width: 430px;
+  width: 650px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-
-  .records-header {
-    width: 100%;
-    height: 52px;
-    background-image: url("@/assets/header-bg.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-
-    .records-header-title {
-      position: absolute;
-      top: 8px;
-      left: 40px;
-      line-height: 28px;
-
-      font-family: "PingFang SC";
-      font-size: 20px;
-      font-weight: 400;
-      color: #ffffff;
-      letter-spacing: 0.4px;
-    }
-  }
 
   .records-content {
     width: 100%;
-    flex: 1;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
       "a b"
       "c d";
-    gap: 20px;
+    gap: 58px 122px;
 
     .records-content-item {
-      width: 100%;
-      height: 100%;
+      width: 250px;
+      height: 102px;
       // background-color: red;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 31px;
 
       .records-content-item-icon {
-        width: 54px;
-        height: 54px;
+        width: 90px;
+        height: 90px;
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
@@ -62,7 +34,7 @@
       .records-content-item-right-value {
         width: 100%;
         font-family: "PingFang SC";
-        font-size: 32px;
+        font-size: 48px;
         font-weight: 700;
         color: #ffffff;
       }
@@ -70,7 +42,7 @@
       .records-content-item-right-label {
         width: 100%;
         font-family: "PingFang SC";
-        font-size: 18px;
+        font-size: 27px;
         font-weight: 400;
         color: #ffffff;
         opacity: 0.6;
