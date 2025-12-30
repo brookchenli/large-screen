@@ -5,7 +5,6 @@ import Tasks from "@/components/tasks";
 import Staff from "@/components/staff";
 import DailyCollection from "@/components/daily-collection";
 import DailyCollection1 from "@/components/daily-collection-1";
-import Panel from "@/components/panel";
 export default function LeftSide() {
   return (
     <div className="left-side">

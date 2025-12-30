@@ -13,7 +13,6 @@ interface PanelProps {
 export default function Panel({
   children,
   title = "设置标题",
-  isBig = false,
   classNames = "",
   style = {},
 }: PanelProps) {

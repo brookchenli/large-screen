@@ -297,55 +297,64 @@
             "title": "场景1",
             "time": "12:00:00",
             "color": "red",
-            "status": "监控中"
+            "status": "监控中",
+            "video": "video1"
           },
           {
             "title": "场景2",
             "time": "12:00:00",
             "color": "blue",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video2"
           },
           {
             "title": "场景3",
             "time": "12:00:00",
             "color": "green",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video3"
           },
           {
             "title": "场景4",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video4"
           },
           {
             "title": "场景5",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video5"
           },
           {
             "title": "场景6",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video6"
           },
           {
             "title": "场景7",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video7"
           },
           {
             "title": "场景8",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video8"
           },
           {
             "title": "场景9",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束"
+            "status": "已结束",
+            "video": "video9"
           }
         ]
       }

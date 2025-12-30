@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useState, useRef, ReactNode } from "react";
-
+import React, { useLayoutEffect, useState, useRef } from "react";
+import type { ReactNode } from "react";
 interface ViewScaleManagerProps {
   children: ReactNode;
   width?: number; // 设计稿宽度
