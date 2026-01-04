@@ -64,7 +64,7 @@ const DailyCollectionChart: React.FC = () => {
   };
 
   return (
-    <Panel classNames="daily-collection-1" title={title}>
+    <Panel classNames="daily-collection-1" title={title} isBig={true}>
       <div className="daily-collection-1-content">
         <ReactECharts
           option={option}

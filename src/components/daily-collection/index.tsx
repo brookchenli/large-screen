@@ -53,7 +53,7 @@ export default function DailyCollection() {
     ],
   };
   return (
-    <Panel classNames="daily-collection" title={title}>
+    <Panel classNames="daily-collection" title={title} isBig={true}>
       <div className="daily-collection-content">
         <ReactECharts
           option={option}

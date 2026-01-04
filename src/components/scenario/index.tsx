@@ -75,7 +75,7 @@ export default function Scenario() {
   }, []);
 
   return (
-    <Panel classNames="scenario" title={title}>
+    <Panel classNames="scenario" title={title} isBig={true}>
       <div className="scenario-content">
         {data.map((item, index) => (
           <VideoCard
