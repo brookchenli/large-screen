@@ -14,8 +14,7 @@ const WeatherIcon: React.FC<Props> = ({
   color = "currentColor",
 }) => {
   const Icon = getWeatherIconComponent(icon);
-
-  return <Icon width={size} height={size} style={{ color }} />;
+  return <Icon width={size} height={size} style={{ color }} key={icon} />;
 };
 
 export default WeatherIcon;

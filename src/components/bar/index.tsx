@@ -85,7 +85,7 @@ export default function Bar() {
         /> */}
         <WeatherIcon
           icon={weatherIcon}
-          size={22}
+          size={30}
           color={weatherIcon === "100" ? "#FFD700" : "#888"}
         />
       </div>
