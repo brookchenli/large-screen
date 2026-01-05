@@ -38,12 +38,22 @@ export default function Warning() {
     warningIcon4,
     warningIcon5,
   ];
+
+  const radarColors: string[][] = [
+    ["rgba(28, 96, 254, 0)", "rgba(28, 96, 254, 1)"],
+    ["rgba(255, 61, 0, 0)", "rgba(255, 61, 0, 1)"],
+    ["rgba(255, 138, 0, 0)", "rgba(255, 138, 0, 1)"],
+    ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 1)"],
+  ];
   return (
     <Panel classNames="warning" title={title}>
       <div className="warning-content-section1">
-        {data1.map((item) => (
+        {data1.map((item, index) => (
           <div className="warning-content-section1-item" key={item.label}>
-            <Radar />
+            <Radar
+              colors={radarColors[index % radarColors.length]}
+              percentage={item.percentage}
+            />
             <div className="warning-content-section1-item-info">
               <div className="warning-content-section1-item-info-value">
                 <span>{item.percentage}% </span>

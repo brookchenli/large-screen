@@ -1,14 +1,18 @@
 import "./index.less";
 import Sector from "./sector";
-
-export default function Radar() {
+interface RadarProps {
+  colors: string[];
+  percentage: number;
+}
+export default function Radar({ colors, percentage }: RadarProps) {
+  console.log(colors);
   return (
     <div className="radar">
       <Sector
-        angle={90}
+        angle={percentage * 3.6}
         startAngle={-90}
         gradientId="sectorGradient"
-        colors={["rgba(56, 119, 242, 1)", "rgba(0, 176, 93, 0.2)"]}
+        colors={[colors[0], colors[1]]}
       />
     </div>
   );

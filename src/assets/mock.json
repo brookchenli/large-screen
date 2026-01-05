@@ -157,6 +157,7 @@
               "value": 100,
               "text": "正常运行设备",
               "percentage": 10,
+              "color": "rgba(56, 119, 242, 1)",
               "unit": "台"
             },
             {
@@ -164,6 +165,7 @@
               "value": 200,
               "text": "异常设备",
               "percentage": 20,
+              "color": "rgba(0, 176, 93, 1)",
               "unit": "台"
             },
             {
@@ -171,6 +173,7 @@
               "value": 300,
               "text": "离线设备",
               "percentage": 50,
+              "color": "rgba(217, 176, 57, 1)",
               "unit": "台"
             },
             {
@@ -178,6 +181,7 @@
               "value": 400,
               "text": "设备总数",
               "percentage": 80,
+              "color": "rgba(255, 215, 0, 1)",
               "unit": "台"
             }
           ],
