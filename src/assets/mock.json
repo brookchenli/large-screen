@@ -191,9 +191,9 @@
               "value": 50,
               "percentage": 20,
               "gradientColors": {
-                "light": "#a5f3fc",
-                "middle": "#22d3ee",
-                "dark": "#0f766e"
+                "light": "rgba(255, 255, 255, 0.1)",
+                "middle": "rgba(255, 255, 255, 0.1)",
+                "dark": "rgba(255, 255, 255, 0.2)"
               }
             },
             {

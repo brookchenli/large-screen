@@ -6,6 +6,7 @@ import warningIcon3 from "@/assets/warning-icon3.png";
 import warningIcon4 from "@/assets/warning-icon4.png";
 import warningIcon5 from "@/assets/warning-icon5.png";
 import StepProgressBar from "@/components/progress-step/step-progress-bar";
+import DiscreteProgressBar from "@/components/discrete-progress-bar";
 import mock from "@/assets/mock.json";
 import Panel from "../panel";
 interface WarningItem {
@@ -45,6 +46,14 @@ export default function Warning() {
     ["rgba(255, 138, 0, 0)", "rgba(255, 138, 0, 1)"],
     ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 1)"],
   ];
+
+  const progressBarColors: string[] = [
+    "#00BABA",
+    "#00BABA",
+    "#00BABA",
+    "#C13803",
+    "#FFFFFF",
+  ];
   return (
     <Panel classNames="warning" title={title}>
       <div className="warning-content-section1">
@@ -80,14 +89,11 @@ export default function Warning() {
               {item.label}
             </div>
             <div className="warning-content-section2-item-percentage">
-              <StepProgressBar
+              <DiscreteProgressBar
                 total={item.value}
                 current={item.percentage}
-                width={263}
-                barHeight={6}
-                containerHeight={14}
-                gap={3}
-                gradientColors={item.gradientColors}
+                completedGradient={[progressBarColors[index], "#FFFFFF"]}
+                pendingGradient={["#000000", "#FFFFFF"]}
               />
             </div>
             <div className="warning-content-section2-item-value">
