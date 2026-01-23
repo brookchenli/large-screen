@@ -1,7 +1,7 @@
 import "./App.css";
 import MainScreen from "./components/main-screen";
 import ViewManager from "./components/view-manager";
-import DiscreteProgressBar from "./components/discrete-progress-bar";
+// import DiscreteProgressBar from "./components/discrete-progress-bar";
 
 // import TestMain from "./components/test-main";
 function App() {
