@@ -12,24 +12,24 @@
         "col1": {
           "desc": "第一行, 第一列, 存储相关, percentage 为左边水球图的百分比",
           "title": "数据存储",
-          "percentage": 30,
+          "percentage": 5.12,
           "data": [
             {
-              "label": "标签名称1",
-              "value": 35,
-              "total": 200,
+              "label": "武汉存储（TB）",
+              "value": 350,
+              "total": 2000,
               "color": "rgba(56, 119, 242, 1)"
             },
             {
-              "label": "标签名称2",
-              "value": 180,
-              "total": 200,
+              "label": "北京存储（TB）",
+              "value": 1900,
+              "total": 2000,
               "color": "rgba(0, 176, 93, 1)"
             },
             {
-              "label": "标签名称3",
-              "value": 123,
-              "total": 200,
+              "label": "云存储（TB）",
+              "value": 1024,
+              "total": 2000,
               "color": "rgba(217, 176, 57, 1)"
             }
           ]
@@ -40,18 +40,18 @@
           "percentage": 30,
           "data": [
             {
-              "label": "标签名称1",
-              "value": 35
+              "label": "自适应抓取",
+              "value": 217861
             },
             {
-              "label": "标签名称2",
-              "value": 180
+              "label": "VR遥操作",
+              "value": 10081
             },
             {
-              "label": "标签名称3",
-              "value": 123
+              "label": "UMI操作",
+              "value": 31086
             },
-            { "label": "标签名称4", "value": 123 }
+            { "label": "动作捕捉遥操作", "value": 7653 }
           ]
         }
       },
@@ -88,32 +88,32 @@
           "title": "分员工统计",
           "data": [
             {
-              "label": "标签名称1",
-              "value": 23456,
-              "total": 100000,
+              "label": "章润",
+              "value": 7592,
+              "total": 10000,
               "index": "1"
             },
             {
-              "label": "标签名称2",
-              "value": 32124,
-              "total": 100000,
+              "label": "郑殿伟",
+              "value": 6642,
+              "total": 10000,
               "index": "2"
             },
             {
-              "label": "标签名称3",
-              "value": 2311,
+              "label": "董建强",
+              "value": 2180,
               "total": 10000,
               "index": "3"
             },
             {
-              "label": "标签名称4",
-              "value": 2421,
+              "label": "林一凡",
+              "value": 1767,
               "total": 10000,
               "index": "4"
             },
             {
-              "label": "标签名称5",
-              "value": 4124,
+              "label": "高升",
+              "value": 1548,
               "total": 100000,
               "index": "5"
             }
@@ -122,7 +122,7 @@
       },
       "row3": {
         "desc": "第三行, 包含每日采集量",
-        "title": "每日采集量",
+        "title": "每日采集条数",
         "xData": [
           "1",
           "2",
@@ -137,12 +137,18 @@
           "11",
           "12"
         ],
-        "yData": [120, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150]
+        "yData": [
+          2103, 2050, 1508, 2810, 1703, 1320, 2200, 1150, 2180, 2480, 2920,
+          2100, 2510
+        ]
       },
       "row4": {
         "desc": "第四行, 包含每日采集量2",
-        "title": "每日采集量",
-        "yData": [200, 200, 150, 80, 70, 120, 200, 150, 80, 70, 120, 200, 150]
+        "title": "每日采集有效时长（分钟）",
+        "yData": [
+          1762, 2011, 1652, 2301, 1789, 1200, 2030, 1530, 1810, 2170, 2420,
+          2200, 2150
+        ]
       }
     },
     "right_side": {
@@ -154,52 +160,38 @@
           "data1": [
             {
               "label": "标签名称1",
-              "value": 100,
+              "value": 10,
               "text": "正常运行设备",
-              "percentage": 10,
-              "color": "rgba(56, 119, 242, 1)",
+              "percentage": 91,
               "unit": "台"
             },
             {
               "label": "标签名称2",
-              "value": 200,
+              "value": 0,
               "text": "异常设备",
-              "percentage": 20,
-              "color": "rgba(0, 176, 93, 1)",
+              "percentage": 0,
               "unit": "台"
             },
             {
               "label": "标签名称3",
-              "value": 300,
+              "value": 1,
               "text": "离线设备",
-              "percentage": 50,
-              "color": "rgba(217, 176, 57, 1)",
+              "percentage": 9,
               "unit": "台"
             },
             {
               "label": "标签名称4",
-              "value": 400,
+              "value": 11,
               "text": "设备总数",
-              "percentage": 80,
-              "color": "rgba(255, 215, 0, 1)",
+              "percentage": 100,
               "unit": "台"
             }
           ],
           "data2": [
             {
-              "label": "标签名称1",
-              "value": 50,
-              "percentage": 20,
-              "gradientColors": {
-                "light": "rgba(255, 255, 255, 0.1)",
-                "middle": "rgba(255, 255, 255, 0.1)",
-                "dark": "rgba(255, 255, 255, 0.2)"
-              }
-            },
-            {
-              "label": "标签名称2",
-              "value": 50,
-              "percentage": 50,
+              "label": "机械臂性能",
+              "value": 99,
+              "percentage": 99,
               "gradientColors": {
                 "light": "#a5f3fc",
                 "middle": "#22d3ee",
@@ -207,9 +199,19 @@
               }
             },
             {
-              "label": "标签名称3",
-              "value": 50,
-              "percentage": 30,
+              "label": "夹爪性能",
+              "value": 97,
+              "percentage": 97,
+              "gradientColors": {
+                "light": "#a5f3fc",
+                "middle": "#22d3ee",
+                "dark": "#0f766e"
+              }
+            },
+            {
+              "label": "触觉传感器寿命",
+              "value": 93,
+              "percentage": 93,
               "gradientColors": {
                 "light": "#FFE7BA",
                 "middle": "#FFD180",
@@ -217,9 +219,9 @@
               }
             },
             {
-              "label": "标签名称4",
-              "value": 50,
-              "percentage": 10,
+              "label": "VR设备灵敏度",
+              "value": 87,
+              "percentage": 87,
               "gradientColors": {
                 "light": "#a5f3fc",
                 "middle": "#22d3ee",
@@ -227,9 +229,9 @@
               }
             },
             {
-              "label": "标签名称5",
-              "value": 50,
-              "percentage": 2,
+              "label": "摄像头成功帧率",
+              "value": 99,
+              "percentage": 99,
               "gradientColors": {
                 "light": "#FF0000",
                 "middle": "#FF0000",
@@ -243,50 +245,32 @@
           "title": "日志数据",
           "data": [
             {
-              "position": "xxx-占位符, 请忽略",
-              "ism": "xxx-占位符, 请忽略",
-              "suspected": "xxx-占位符, 请忽略",
-              "IGG": "xxx-占位符, 请忽略"
+              "position": "任务完成日志信息",
+              "ism": "27612",
+              "suspected": "391",
+              "IGG": "26831"
             },
             {
-              "position": "THE BRONX1",
-              "ism": "2",
-              "suspected": "3",
-              "IGG": "4"
+              "position": "任务关键点信息",
+              "ism": "3871",
+              "suspected": "72",
+              "IGG": "3699"
             },
             {
-              "position": "THE BRONX2",
-              "ism": "3",
-              "suspected": "2",
-              "IGG": "1"
+              "position": "任务触觉信息",
+              "ism": "389061",
+              "suspected": "293",
+              "IGG": "385022"
             },
             {
-              "position": "THE BRONX3",
-              "ism": "1",
-              "suspected": "2",
-              "IGG": "1"
+              "position": "任务位姿信息",
+              "ism": "986123",
+              "suspected": "2873",
+              "IGG": "984611"
             },
             {
-              "position": "THE BRONX4",
-              "ism": "1",
-              "suspected": "2",
-              "IGG": "1"
-            },
-            {
-              "position": "THE BRONX5",
-              "ism": "1",
-              "suspected": "2",
-              "IGG": "1"
-            },
-            {
-              "position": "THE BRONX6",
-              "ism": "1",
-              "suspected": "2",
-              "IGG": "1"
-            },
-            {
-              "position": "THE BRONX7",
-              "ism": "1",
+              "position": "任务时间戳信息",
+              "ism": "89613",
               "suspected": "2",
               "IGG": "1"
             }
@@ -301,64 +285,25 @@
             "title": "场景1",
             "time": "12:00:00",
             "color": "red",
-            "status": "监控中",
-            "video": "video1"
+            "status": "监控中"
           },
           {
             "title": "场景2",
             "time": "12:00:00",
             "color": "blue",
-            "status": "已结束",
-            "video": "video2"
+            "status": "已结束"
           },
           {
             "title": "场景3",
             "time": "12:00:00",
             "color": "green",
-            "status": "已结束",
-            "video": "video3"
+            "status": "已结束"
           },
           {
             "title": "场景4",
             "time": "12:00:00",
             "color": "yellow",
-            "status": "已结束",
-            "video": "video4"
-          },
-          {
-            "title": "场景5",
-            "time": "12:00:00",
-            "color": "yellow",
-            "status": "已结束",
-            "video": "video5"
-          },
-          {
-            "title": "场景6",
-            "time": "12:00:00",
-            "color": "yellow",
-            "status": "已结束",
-            "video": "video6"
-          },
-          {
-            "title": "场景7",
-            "time": "12:00:00",
-            "color": "yellow",
-            "status": "已结束",
-            "video": "video7"
-          },
-          {
-            "title": "场景8",
-            "time": "12:00:00",
-            "color": "yellow",
-            "status": "已结束",
-            "video": "video8"
-          },
-          {
-            "title": "场景9",
-            "time": "12:00:00",
-            "color": "yellow",
-            "status": "已结束",
-            "video": "video9"
+            "status": "已结束"
           }
         ]
       }
