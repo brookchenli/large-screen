@@ -45,7 +45,7 @@ const DiscreteProgressBar: React.FC<DiscreteProgressBarProps> = ({
   current,
   completedGradient,
   pendingGradient,
-  gap = 4,
+  gap = 2,
 }) => {
   return (
     <div

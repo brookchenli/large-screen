@@ -5,7 +5,7 @@ import warningIcon2 from "@/assets/warning-icon2.png";
 import warningIcon3 from "@/assets/warning-icon3.png";
 import warningIcon4 from "@/assets/warning-icon4.png";
 import warningIcon5 from "@/assets/warning-icon5.png";
-import StepProgressBar from "@/components/progress-step/step-progress-bar";
+// import StepProgressBar from "@/components/progress-step/step-progress-bar";
 import DiscreteProgressBar from "@/components/discrete-progress-bar";
 import mock from "@/assets/mock.json";
 import Panel from "../panel";
@@ -40,12 +40,7 @@ export default function Warning() {
     warningIcon5,
   ];
 
-  const radarColors: string[][] = [
-    ["rgba(28, 96, 254, 0)", "rgba(28, 96, 254, 1)"],
-    ["rgba(255, 61, 0, 0)", "rgba(255, 61, 0, 1)"],
-    ["rgba(255, 138, 0, 0)", "rgba(255, 138, 0, 1)"],
-    ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 1)"],
-  ];
+  const radarColors: string[] = ["#1C60FE", "#FF3D00", "#FF8A00", "#FFFFFF"];
 
   const progressBarColors: string[] = [
     "#00BABA",
@@ -60,7 +55,7 @@ export default function Warning() {
         {data1.map((item, index) => (
           <div className="warning-content-section1-item" key={item.label}>
             <Radar
-              colors={radarColors[index % radarColors.length]}
+              color={radarColors[index % radarColors.length]}
               percentage={item.percentage}
             />
             <div className="warning-content-section1-item-info">

@@ -1,7 +1,7 @@
 import "./index.less";
 import mock from "@/assets/mock.json";
 import Panel from "../panel";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 // import video1 from "@/assets/videos/video1.mp4";
 // import video2 from "@/assets/videos/video2.mp4";
@@ -26,19 +26,19 @@ import image9 from "@/assets/jiankong-huizong/9@2x.png";
 // import { captureFirstFrame } from "@/tools/ capture-frame";
 // import VideoCard from "./video-card";
 import ImageCard from "./image-card";
-interface ScenarioItem {
-  title: string;
-  time: string;
-  color: string;
-  status: string;
-  video: string;
-}
+// interface ScenarioItem {
+//   title: string;
+//   time: string;
+//   color: string;
+//   status: string;
+//   video: string;
+// }
 export default function Scenario() {
-  const data = mock.data.right_side.row2.data as ScenarioItem[];
+  // const data = mock.data.right_side.row2.data as ScenarioItem[];
   const title = mock.data.right_side.row2.title;
-  const [posterList, setPosterList] = useState<
-    { name: string; poster: string }[]
-  >([]);
+  // const [posterList, setPosterList] = useState<
+  //   { name: string; poster: string }[]
+  // >([]);
 
   const imageList = [
     image1,

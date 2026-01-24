@@ -21,9 +21,6 @@ export default function Records() {
 
   return (
     <Panel title={title} classNames="records">
-      <div className="records-header">
-        <div className="records-header-title">{title}</div>
-      </div>
       <div className="records-content">
         {recordData.map((item, index) => (
           <div className="records-content-item" key={index}>
