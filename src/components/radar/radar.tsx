@@ -54,7 +54,7 @@ const NewRadar: React.FC<NewRadarProps> = ({
   };
 
   // 计算百分比
-  const percentage = Math.round((angle / 360) * 100);
+  // const percentage = Math.round((angle / 360) * 100);
 
   // 圆心和半径
   const radius = size / 2;
@@ -76,7 +76,7 @@ const NewRadar: React.FC<NewRadarProps> = ({
   const segments = Math.min(Math.ceil(angle), 100);
   const segmentAngle = angle / segments;
 
-  const paths: JSX.Element[] = [];
+  const paths: React.ReactElement[] = [];
 
   // 生成每个分段
   for (let i = 0; i < segments; i++) {
