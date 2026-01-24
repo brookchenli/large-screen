@@ -26,7 +26,7 @@ export default function DailyCollection() {
       data: xData,
       axisLabel: {
         show: true,
-        fontSize: 16,
+        fontSize: 18,
         color: "#ffffff",
       },
     },
@@ -37,7 +37,7 @@ export default function DailyCollection() {
       },
       axisLabel: {
         show: true,
-        fontSize: 16,
+        fontSize: 18,
         color: "#ffffff",
       },
     },

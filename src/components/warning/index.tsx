@@ -85,8 +85,8 @@ export default function Warning() {
             </div>
             <div className="warning-content-section2-item-percentage">
               <DiscreteProgressBar
-                total={item.value}
-                current={item.percentage}
+                total={50}
+                current={Math.round((item.percentage / 100.0) * 50)}
                 completedGradient={[progressBarColors[index], "#FFFFFF"]}
                 pendingGradient={["#000000", "#FFFFFF"]}
               />

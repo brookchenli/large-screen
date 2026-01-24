@@ -28,7 +28,7 @@ const DailyCollectionChart: React.FC = () => {
       },
       axisLabel: {
         show: true,
-        fontSize: 16,
+        fontSize: 18,
         color: "#ffffff",
       },
       axisTick: { show: false },
@@ -42,7 +42,7 @@ const DailyCollectionChart: React.FC = () => {
       },
       axisLabel: {
         show: true,
-        fontSize: 16,
+        fontSize: 18,
         color: "#ffffff",
       },
     },
