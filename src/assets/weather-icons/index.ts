@@ -3,6 +3,7 @@ import Icon100 from "./100.svg?react";
 import Icon101 from "./101.svg?react";
 import Icon102 from "./102.svg?react";
 import Icon150 from "./150.svg?react";
+import Icon501 from "./501.svg?react";
 import DefaultIcon from "./999.svg?react";
 
 export const weatherIconMap = {
@@ -10,6 +11,7 @@ export const weatherIconMap = {
   "101": Icon101,
   "102": Icon102,
   "150": Icon150,
+  "501": Icon501,
 } as const;
 
 export const getWeatherIconComponent = (icon?: string) => {
