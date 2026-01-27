@@ -1,14 +1,22 @@
 import "./App.css";
-import MainScreen from "./components/main-screen";
+import MainScreen4800x2080 from "./components/main-screen-4800";
+import MainScreen1280x800 from "./components/main-screen"
+
 import ViewManager from "./components/view-manager";
-import DiscreteProgressBar from "./components/discrete-progress-bar";
+// import DiscreteProgressBar from "./components/discrete-progress-bar";
 
 // import TestMain from "./components/test-main";
 function App() {
+    
+  const searchParams = new URLSearchParams(window.location.search);
+  const location = searchParams.get("location")
+  const isWuHan = (location && location === 'wh');
   return (
-    <ViewManager width={4800} height={2080}>
-      <MainScreen />
-    </ViewManager>
+    isWuHan ? (
+  <ViewManager width={4800} height={3000}>
+    <MainScreen1280x800 />
+  </ViewManager>) : (<MainScreen4800x2080 />)
+    
     // <div
     //   style={{
     //     width: "500px",

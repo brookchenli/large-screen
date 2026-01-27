@@ -1,5 +1,5 @@
 import "./index.less";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 export default function VideoCard({
   video,
   title,
@@ -15,7 +15,7 @@ export default function VideoCard({
   status: string;
   poster: string | undefined;
 }) {
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {

@@ -24,11 +24,21 @@ export default function DailyCollection() {
     xAxis: {
       type: "category",
       data: xData,
+      axisLabel: {
+        show: true,
+        fontSize: 18,
+        color: "#ffffff",
+      },
     },
     yAxis: {
       type: "value",
       splitLine: {
         show: false,
+      },
+      axisLabel: {
+        show: true,
+        fontSize: 18,
+        color: "#ffffff",
       },
     },
     series: [

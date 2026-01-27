@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useRef } from "react";
+import React, { useLayoutEffect, useState, useRef, useCallback } from "react";
 import type { ReactNode } from "react";
 interface ViewScaleManagerProps {
   children: ReactNode;
@@ -14,26 +14,30 @@ const ViewScaleManager: React.FC<ViewScaleManagerProps> = ({
   const [scale, setScale] = useState({ x: 1, y: 1 });
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     if (!wrapperRef.current) return;
 
     // 获取当前窗口的宽高
     const clientWidth = window.innerWidth;
     const clientHeight = window.innerHeight;
 
-    // 计算缩放比例
-    // 这里采用“全屏铺满且保持比例”的逻辑，
-    // 如果你希望拉伸铺满，可以分别计算 x 和 y
+    // 计算等比例缩放，保持宽高比避免失真
     const scaleFactor = Math.min(clientWidth / width, clientHeight / height);
 
     setScale({ x: scaleFactor, y: scaleFactor });
-  };
+  }, [width, height]);
 
   useLayoutEffect(() => {
-    handleResize();
+    // 使用 requestAnimationFrame 延迟执行，避免在 effect 中直接调用 setState
+    const rafId = requestAnimationFrame(() => {
+      handleResize();
+    });
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [width, height]);
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   return (
     <div

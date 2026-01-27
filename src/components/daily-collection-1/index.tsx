@@ -5,7 +5,7 @@ import "./index.less";
 import mock from "@/assets/mock.json";
 import Panel from "../panel";
 const DailyCollectionChart: React.FC = () => {
-  const hours = Array.from({ length: 12 }, (_, i) => i + 1);
+  const xData = mock.data.left_side.row4.xData;
   const yData = mock.data.left_side.row4.yData;
   const title = mock.data.left_side.row4.title;
 
@@ -22,9 +22,14 @@ const DailyCollectionChart: React.FC = () => {
     },
     xAxis: {
       type: "category",
-      data: hours.map((h) => `${h}`),
+      data: xData,
       axisLine: {
         lineStyle: { color: "#666" },
+      },
+      axisLabel: {
+        show: true,
+        fontSize: 18,
+        color: "#ffffff",
       },
       axisTick: { show: false },
     },
@@ -34,6 +39,11 @@ const DailyCollectionChart: React.FC = () => {
         lineStyle: {
           color: "rgba(255,255,255,0.15)",
         },
+      },
+      axisLabel: {
+        show: true,
+        fontSize: 18,
+        color: "#ffffff",
       },
     },
     series: [

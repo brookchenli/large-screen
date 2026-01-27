@@ -1,65 +1,34 @@
-.main-screen {
+.main-screen-1280 {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #000000;
+  align-items: stretch;
+  justify-content: flex-start;
 
-  background-image: url("@/assets/center-bg.png");
+  // background-image: url("@/assets/center-bg.png");
   background-size: 2954px 1394px;
   background-repeat: no-repeat;
   background-position: center;
 
-  .main-screen-header {
-    width: 100%;
-    height: 176px;
+  .main-screen-header-wrapper {
+    width: 4800px;
+    flex-shrink: 0;
     margin-top: 15px;
-    // background-color: red;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 74px;
-
-    background-image: url("@/assets/4800/header-3638x136.png");
-    background-size: 3638px 176px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-
-    .main-screen-header-center {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 30px;
-
-      .main-screen-header-center-logo {
-        width: 54px;
-        height: 46px;
-        // background-color: red;
-      }
-
-      .main-screen-header-center-text {
-        font-size: 46px;
-        font-weight: 500;
-        font-style: medium;
-        color: #ffffff;
-        // background-color: blue;
-      }
-    }
+    align-self: center;
   }
 
   .main-screen-content {
     // background-color: yellow;
-    width: calc(100% - 144px);
-    margin: 54px 72px 0 72px;
+    width: 100%;
+    margin: 54px 0 0 0;
     flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 0;
+    flex-shrink: 0;
+    padding: 0;
   }
 }
