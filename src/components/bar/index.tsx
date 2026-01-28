@@ -15,7 +15,7 @@ export default function Bar() {
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date());
-    }, 1000 * 60);
+    }, 1000);
 
     return () => clearInterval(timer);
   }, []);
