@@ -6,7 +6,7 @@
     "location": "101200101"
   },
   "data": {
-    "left_side": {
+    "leftSide": {
       "row1": {
         "desc": "第一行",
         "col1": {
@@ -17,20 +17,19 @@
             {
               "label": "武汉存储（TB）",
               "value": 350,
-              "total": 2000,
-              "color": "rgba(56, 119, 242, 1)"
+              "total": 2000
+              
             },
             {
               "label": "北京存储（TB）",
               "value": 1900,
-              "total": 2000,
-              "color": "rgba(0, 176, 93, 1)"
+              "total": 2000
+              
             },
             {
               "label": "云存储（TB）",
               "value": 1024,
-              "total": 2000,
-              "color": "rgba(217, 176, 57, 1)"
+              "total": 2000
             }
           ]
         },
@@ -165,7 +164,7 @@
         ]
       }
     },
-    "right_side": {
+    "rightSide": {
       "row1": {
         "desc": "第一行, 包含警告提示和日志数据",
         "col1": {
@@ -257,6 +256,7 @@
         "col2": {
           "desc": "第一行, 第二列, 包含日志数据, data中第一个数据为占位符",
           "title": "日志数据",
+          "focusedIndex": 1,
           "data": [
             {
               "position": "任务完成日志信息",

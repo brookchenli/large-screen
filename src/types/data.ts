@@ -1,7 +1,9 @@
 export interface SummaryData {
-    left_side: {
+    leftSide: {
         row1: {
             col1: {
+                title: string;
+                percentage: number;
                 data: {
                     label: string;
                     value: number;
@@ -10,6 +12,7 @@ export interface SummaryData {
                 }[];
             };
             col2: {
+                title: string;
                 data: {
                     label: string;
                     value: number;
@@ -18,6 +21,7 @@ export interface SummaryData {
         };
         row2: {
             col1: {
+                title: string;
                 data: {
                     label: string;
                     value1: number;
@@ -27,6 +31,7 @@ export interface SummaryData {
                 }[];
             };
             col2: {
+                title: string;
                 data: {
                     label: string;
                     value: number;
@@ -36,17 +41,20 @@ export interface SummaryData {
             };
         };
         row3: {
+            title: string;
             xData: string[];
             yData: number[];
         };
         row4: {
+            title: string;
             xData: string[];
             yData: number[];
         };
     };
-    right_side: {
+    rightSide: {
         row1: {
             col1: {
+                title: string;
                 data1: {
                     label: string;
                     value: number;
@@ -66,6 +74,8 @@ export interface SummaryData {
                 }[];
             };
             col2: {
+                title: string;
+                focusedIndex: number;
                 data: {
                     position: string;
                     ism: string;

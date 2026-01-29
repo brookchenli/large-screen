@@ -1,13 +1,12 @@
-import React from "react";
+
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
-import "./index.less";
-import mock from "@/assets/mock.json";
+import "./index.less";  
 import Panel from "../panel";
-const DailyCollectionChart: React.FC = () => {
-  const xData = mock.data.left_side.row4.xData;
-  const yData = mock.data.left_side.row4.yData;
-  const title = mock.data.left_side.row4.title;
+import { useData } from "@/hooks/useData";
+export default function DailyCollection1() {
+  const { summary } = useData();
+  const { xData = [], yData = [], title = '' } = summary?.leftSide?.row4 ?? {};
 
   // 单组每日采集量数据
   const collectData = yData;
@@ -84,5 +83,3 @@ const DailyCollectionChart: React.FC = () => {
     </Panel>
   );
 };
-
-export default DailyCollectionChart;

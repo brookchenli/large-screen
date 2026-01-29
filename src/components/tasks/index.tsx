@@ -1,18 +1,11 @@
 import "./index.less";
 import ProgressRectangle from "@/components/progress-rectangle";
-import mock from "@/assets/mock.json";
 import Panel from "../panel";
+import { useData } from "@/hooks/useData";
 
-interface TaskItem {
-  label: string;
-  value1: number;
-  value2: number;
-  total: number;
-  index: string;
-}
-export default function Records() {
-  const title = mock.data.left_side.row2.col1.title;
-  const tasks = mock.data.left_side.row2.col1.data as TaskItem[];
+export default function Tasks() {
+  const { summary } = useData();
+  const { title = '', data: tasks = [] } = summary?.leftSide?.row2?.col1 ?? {};
   return (
     <Panel classNames="tasks" title={title}>
       <div className="tasks-content">

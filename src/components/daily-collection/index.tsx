@@ -1,15 +1,14 @@
 import "./index.less";
 import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
-import mock from "@/assets/mock.json";
 import Panel from "../panel";
+import { useData } from "@/hooks/useData";
 export default function DailyCollection() {
-  const xData = mock.data.left_side.row3.xData;
-  const yData = mock.data.left_side.row3.yData;
-  const title = mock.data.left_side.row3.title;
+  const { summary } = useData();
+  const { xData = [], yData = [], title = '' } = summary?.leftSide?.row3 ?? {};
   const option = {
     title: {
-      text: "每日采集量1",
+      text: title,
       show: false,
     },
     tooltip: {

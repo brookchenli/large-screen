@@ -7,31 +7,12 @@ import warningIcon4 from "@/assets/warning-icon4.png";
 import warningIcon5 from "@/assets/warning-icon5.png";
 // import StepProgressBar from "@/components/progress-step/step-progress-bar";
 import DiscreteProgressBar from "@/components/discrete-progress-bar";
-import mock from "@/assets/mock.json";
 import Panel from "../panel";
-interface WarningItem {
-  label: string;
-  value: number;
-  text: string;
-  percentage: number;
-  unit: string;
-}
-
-interface WarningItem2 {
-  label: string;
-  value: number;
-  percentage: number;
-  gradientColors: {
-    light: string;
-    middle: string;
-    dark: string;
-  };
-}
+import { useData } from "@/hooks/useData";
 
 export default function Warning() {
-  const data1 = mock.data.right_side.row1.col1.data1 as WarningItem[];
-  const data2 = mock.data.right_side.row1.col1.data2 as WarningItem2[];
-  const title = mock.data.right_side.row1.col1.title;
+  const { summary } = useData();
+  const { data1 = [], data2 = [], title = '' } = summary?.rightSide?.row1?.col1 ?? {};
   const warningIcons = [
     warningIcon1,
     warningIcon2,

@@ -6,7 +6,7 @@
     "location": "101200101"
   },
   "data": {
-    "left_side": {
+    "leftSide": {
       "row1": {
         "desc": "第一行",
         "col1": {
@@ -165,7 +165,7 @@
         ]
       }
     },
-    "right_side": {
+    "rightSide": {
       "row1": {
         "desc": "第一行, 包含警告提示和日志数据",
         "col1": {

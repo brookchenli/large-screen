@@ -34,8 +34,8 @@ import ImageCard from "./image-card";
 //   video: string;
 // }
 export default function Scenario() {
-  // const data = mock.data.right_side.row2.data as ScenarioItem[];
-  const title = mock.data.right_side.row2.title;
+  // const data = mock.data.rightSide.row2.data as ScenarioItem[];
+  const title = mock.data.rightSide.row2.title;
   // const [posterList, setPosterList] = useState<
   //   { name: string; poster: string }[]
   // >([]);

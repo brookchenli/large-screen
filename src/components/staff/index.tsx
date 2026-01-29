@@ -3,17 +3,12 @@ import staffIcon1 from "@/assets/prize-1.png";
 import staffIcon2 from "@/assets/prize-2.png";
 import staffIcon3 from "@/assets/prize-3.png";
 import staffIcon4 from "@/assets/prize-4.png";
-import mock from "@/assets/mock.json";
 import Panel from "../panel";
-interface StaffItem {
-  label: string;
-  value: number;
-  total: number;
-  index: string;
-}
+import { useData } from "@/hooks/useData";
+
 export default function Staff() {
-  const title = mock.data.left_side.row2.col2.title;
-  const staffData = mock.data.left_side.row2.col2.data as StaffItem[];
+  const { summary } = useData();
+  const { title = '', data: staffData = [] } = summary?.leftSide?.row2?.col2 ?? {};
   const icons = [staffIcon1, staffIcon2, staffIcon3, staffIcon4];
   const prizes = [true, true, true, false, false];
   const colors = ["#3877f2", "#00BFFF", "#00FF7F", "#FFA500", "#FF0000"];

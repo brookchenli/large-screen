@@ -4,21 +4,17 @@ import recordsIcon1 from "@/assets/records_icon1.png";
 import recordsIcon2 from "@/assets/records_icon2.png";
 import recordsIcon3 from "@/assets/records_icon3.png";
 import recordsIcon4 from "@/assets/records_icon4.png";
-import mock from "@/assets/mock.json";
+
 import Panel from "@/components/panel";
-interface RecordItem {
-  label: string;
-  value: number;
-  icon: string;
-}
+import { useData } from "@/hooks/useData";
 
 export default function Records() {
   // 示例数据，实际应该从 API 获取
-  const title = mock.data.left_side.row1.col2.title;
-  const icons = [recordsIcon1, recordsIcon2, recordsIcon3, recordsIcon4];
-  const recordData: RecordItem[] = mock.data.left_side.row1.col2
-    .data as RecordItem[];
+ 
+  const { summary } = useData();
+  const { title = '', data: recordData = [] } = summary?.leftSide?.row1?.col2 ?? {};
 
+  const icons = [recordsIcon1, recordsIcon2, recordsIcon3, recordsIcon4];
   return (
     <Panel title={title} classNames="records">
       <div className="records-content">

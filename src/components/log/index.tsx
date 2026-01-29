@@ -1,18 +1,11 @@
 import "./index.less";
-import mock from "@/assets/mock.json";
 import Panel from "../panel";
-interface LogItem {
-  position: string;
-  ism: string;
-  suspected: string;
-  IGG: string;
-}
+import { useData } from "@/hooks/useData";
 
 export default function Log() {
-  const data = mock.data.right_side.row1.col2.data as LogItem[];
-  const title = mock.data.right_side.row1.col2.title;
+  const { summary } = useData();  
+  const { data = [], title = '', focusedIndex = 1 } = summary?.rightSide?.row1?.col2 ?? {};
 
-  const focusedIndex = 4;
   return (
     <Panel classNames="log" title={title}>
       <div className="log-content">
