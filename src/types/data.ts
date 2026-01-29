@@ -8,7 +8,7 @@ export interface SummaryData {
                     label: string;
                     value: number;
                     total: number;
-                    color: string;
+                    
                 }[];
             };
             col2: {

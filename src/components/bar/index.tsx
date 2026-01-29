@@ -2,15 +2,15 @@ import { useState, useEffect, useCallback } from "react";
 import "./index.less";
 import thermometerIcon from "@/assets/温度计.png";
 import humidityIcon from "@/assets/空气湿度.png";
-import mock from "@/assets/mock.json";
 
 // 定义组件接收的 Props 类型
 import WeatherIcon from "./weather-icons";
+import { useData } from "@/hooks/useData";
+import type { WeatherData } from "@/types/data";
 export default function Bar() {
   const [time, setTime] = useState(new Date());
-  const [temperature, setTemperature] = useState(0);
-  const [humidity, setHumidity] = useState(0);
-  const [weatherIcon, setWeatherIcon] = useState("100");
+  const { weather= {} } = useData();
+  const { temperature = 0, humidity = 0, icon: weatherIcon = '100' } = weather as WeatherData || {};
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -19,30 +19,6 @@ export default function Bar() {
 
     return () => clearInterval(timer);
   }, []);
-
-  const getWeather = useCallback(async () => {
-    const { key, location } = mock.weather;
-    const url = `https://devapi.qweather.com/v7/weather/now?key=${key}&location=${location}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.now;
-  }, []);
-
-  useEffect(() => {
-    getWeather().then((data) => {
-      setTemperature(data.temp);
-      setHumidity(data.humidity);
-      setWeatherIcon(data.icon);
-    });
-    const timer = setInterval(() => {
-      const date = new Date();
-      const minutes = date.getMinutes();
-      if (minutes === 30) {
-        getWeather();
-      }
-    }, 1000 * 60 * 30);
-    return () => clearInterval(timer);
-  }, [getWeather]);
 
   const formatTime = (date: Date) => {
     const hours = date.getHours().toString().padStart(2, "0");
