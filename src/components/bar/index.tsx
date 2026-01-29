@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import "./index.less";
 import thermometerIcon from "@/assets/温度计.png";
 import humidityIcon from "@/assets/空气湿度.png";
