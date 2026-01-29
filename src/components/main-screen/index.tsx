@@ -15,7 +15,7 @@ const Index = () => {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
 
-      // ��Ƹ�ߴ�
+      // 设计稿尺寸
       const designWidth = 4800;
       const designHeight = 3000;
       const headerHeight = 176;
@@ -23,40 +23,40 @@ const Index = () => {
       const headerMarginTop = 15;
       const contentMarginTop = 54;
 
-      // ViewManager�Ļ������ű������ȱ������ţ�
+      // ViewManager的基础缩放比例（等比例缩放）
       const baseScale = Math.min(
         windowWidth / designWidth,
         windowHeight / designHeight
       );
 
-      // ����ViewManager���ź��ʵ�ʳߴ�
+      // 经过ViewManager缩放后的实际尺寸
       const scaledHeaderHeight = headerHeight * baseScale;
       const scaledHeaderMarginTop = headerMarginTop * baseScale;
       const scaledContentMarginTop = contentMarginTop * baseScale;
 
-      // ��������������ø߶ȣ���ȥheader�߶Ⱥ�margin������ViewManager�����ţ�
+      // 计算内容区域可用高度（减去header高度和margin，考虑ViewManager的缩放）
       const contentAvailableHeight =
         windowHeight -
         scaledHeaderHeight -
         scaledHeaderMarginTop -
         scaledContentMarginTop;
 
-      // ʵ�����ݿ��ȣ�leftside(1372px) �� rightside(1372px) �ֱ�����
+      // 实际内容宽度：leftside(1372px) 和 rightside(1372px) 分别缩放
       const leftSideWidth = 1372;
       const rightSideWidth = 1372;
 
-      // ����ViewManager���ź��ʵ�ʳߴ�
+      // 经过ViewManager缩放后的实际尺寸
       const scaledLeftSideWidth = leftSideWidth * baseScale;
       const scaledRightSideWidth = rightSideWidth * baseScale;
 
-      // ��������������ø߶�
+      // 计算内容区域可用高度
       const contentDesignHeight =
         (designHeight - headerHeight - headerMarginTop - contentMarginTop) *
         baseScale;
 
-      // ������������Ķ������ţ�leftside��rightsideʹ�ã�
-      // ȷ�����ź󲻻ᳬ�����ڿ��ȣ�ÿ����������ռ���ڿ��ȵ�һ�룬��ȥ���
-      const sideMargin = 60; // ���Ҹ�60px���
+      // 计算内容区域的额外缩放（leftside和rightside使用）
+      // 确保缩放后不会超出窗口宽度，每个侧边栏最多占窗口宽度的一半，减去间距
+      const sideMargin = 60; // 左右各60px间距
       const maxAvailableWidthPerSide = windowWidth / 2 - sideMargin;
       const contentScaleXLeft = maxAvailableWidthPerSide / scaledLeftSideWidth;
       const contentScaleXRight =
@@ -65,17 +65,17 @@ const Index = () => {
       const contentScaleY = contentAvailableHeight / contentDesignHeight;
       const contentScale = Math.min(contentScaleX, contentScaleY);
 
-      // ����header�Ŀ������ţ��߶ȱ���176px���䣩
-      // header����Ӧ����Ӧ���ڿ���
+      // 计算header的宽度缩放（高度保持176px不变）
+      // header宽度应该适应窗口宽度
       const scaledHeaderWidth = headerDesignWidth * baseScale;
       const headerWidthScale = Math.min(
         windowWidth / scaledHeaderWidth,
-        0.98 // ��΢��Сһ�㣬�����߾�
+        0.98 // 稍微缩小一点，留出边距
       );
 
       setScales({
         headerWidth: headerWidthScale,
-        contentScale: contentScale * 1.5, // ��leftside��rightside�����ű�������Ϊ1.5��
+        contentScale: contentScale * 1.5, // 将leftside和rightside的缩放比例调整为1.5倍
       });
     };
 
