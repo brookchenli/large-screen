@@ -7,6 +7,7 @@ export async function fetchSummary() {
   return res.data;
 }
 
+
 export async function fetchWeather() {
   const res = await weatherApi.get("");
   return res.data;

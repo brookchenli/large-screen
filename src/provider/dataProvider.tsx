@@ -1,6 +1,5 @@
-import React, {
+import {
     createContext,
-    useContext,
     useEffect,
     useState,
     type ReactNode,
@@ -9,7 +8,7 @@ import React, {
   import type { SummaryData, WeatherData } from "../types/data";
 
   import weatherMock from "../mock/weather.json";
-  //import summaryMock from "../mock/summary.json";
+  import summaryMock from "../mock/mock.json";
   
   interface DataContextValue {
     summary: SummaryData | null;
@@ -17,11 +16,11 @@ import React, {
     loading: boolean;
     error: string | null;
   }
-  
+
   export const DataContext = createContext<DataContextValue | null>(null);
   
   export function DataProvider({ children }: { children: ReactNode }) {
-    const [summary, setSummary] = useState<SummaryData | null>(null);
+    const [summary, setSummary] = useState<SummaryData | null>(summaryMock.data);
     const [weather, setWeather] = useState<WeatherData | null>(weatherMock);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -32,6 +31,7 @@ import React, {
       async function load() {
         try {
           setLoading(true);
+          console.log("fetchData");
   
           // 👉 并行请求
           const [summaryRes, weatherRes] = await Promise.all([
@@ -42,10 +42,7 @@ import React, {
           if (cancelled) return;
   
           // 👉 在 Provider 中做“解析 / 整理”
-          setSummary({
-            total: summaryRes.total,
-            updatedAt: summaryRes.updated_at,
-          });
+          setSummary(summaryRes.data);
   
           setWeather({
             temperature: weatherRes.temperature,

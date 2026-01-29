@@ -6,7 +6,9 @@ export const tashanApi = axios.create({
 });
 
 tashanApi.interceptors.request.use((config) => {
-  const token = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlQ29kZSI6InN1cGVyX2FkbWluIiwidHlwZSI6ImFjY2VzcyIsInVzZXJJZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzY5NjU2MTEzLCJleHAiOjE3Njk2NTcwMTN9.xBLOwUUAjCNCqMQaQxa6bz4wwkOU0sG-_HL2l6rZKMY"
-  config.headers.Authorization = `Bearer ${token}`;
+  const token = localStorage.getItem("token");
+  if (config.url?.includes("/api/v1/screen/all")) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
   return config;
 });
