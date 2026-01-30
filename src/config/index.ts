@@ -15,6 +15,29 @@ export const APP_CONFIG = {
    * - "beijing": 北京
    */
   weatherCity: "beijing" as "wuhan" | "beijing",
+
+  /**
+   * 是否显示背景图片
+   * - true: 显示背景图片
+   * - false: 隐藏背景图片
+   */
+  showBackgroundImage: false,
+
+  /**
+   * 背景图片尺寸
+   * - 例如: "100% 100%", "70% 70%", "cover", "contain"
+   */
+  backgroundImageSize: "70% 70%",
+
+  /**
+   * Header 标题文字
+   */
+  headerTitle: "数采场统计中心" as "湖北他山数采统计中心" | "数采场统计中心",
+
+  /**
+   * 是否显示 Header 标题图标
+   */
+  showHeaderIcon: false,
 };
 
 /** 城市 location 代码映射 */

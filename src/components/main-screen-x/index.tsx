@@ -5,7 +5,7 @@ import RightSide from "../right-side";
 import ViewManager from "../view-manager";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import Header from "../header-x";
-import Middle from "../middle";
+import { APP_CONFIG } from "@/config";
 
 const MainScreenX = () => {
   const { width, height } = useWindowSize();
@@ -41,8 +41,12 @@ const MainScreenX = () => {
   console.log("width", width);
   console.log("height", height);
 
+  const backgroundStyle = APP_CONFIG.showBackgroundImage 
+    ? { backgroundSize: APP_CONFIG.backgroundImageSize } 
+    : { backgroundImage: 'none' };
+
   return (
-    <div className="main-screen-x" >
+    <div className="main-screen-x" style={backgroundStyle}>
         <div className="main-screen-x-header" style={{width: `100%`,height: `${headerHeight}px`}}>
            <ViewManager designWidth={4800} designHeight={176} containerWidth={width} containerHeight={headerHeight}>
             <Header />

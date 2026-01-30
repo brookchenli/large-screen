@@ -1,16 +1,17 @@
 import "./index.less";
-// import logo from "@/assets/title-icon.png";
-// import logo1 from "@/assets/tashan_log1.jpg";
-// import logo2 from "@/assets/tashan_log2.jpg";
-
 import Bar from "@/components/bar";
+import { APP_CONFIG } from "@/config";
+import titleIcon from "@/assets/title-icon.png";
+
 export default function Header() {
   return (
     <div className="main-screen-header">
       <div className="main-screen-header-center">
-        {/* <img src={logo2} className="main-screen-header-center-logo" /> */}
+        {APP_CONFIG.showHeaderIcon && (
+          <img src={titleIcon} alt="icon" className="main-screen-header-center-icon" />
+        )}
         <div className="main-screen-header-center-text">
-          湖北他山数采统计中心
+          {APP_CONFIG.headerTitle}
         </div>
       </div>
       <Bar />
