@@ -13,7 +13,7 @@ const WeatherIcon: React.FC<Props> = ({
   size = 48,
   color = "currentColor",
 }) => {
-  console.log("icon:", icon);
+  // console.log("icon:", icon);
   const IconComponent = getWeatherIconComponent(icon);
   return React.createElement(IconComponent, {
     width: size,

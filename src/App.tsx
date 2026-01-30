@@ -1,9 +1,9 @@
 import "./App.css";
-import MainScreen4800x2080 from "./components/main-screen-4800";
 //import MainScreen1280x800 from "./components/main-screen"
 
-import ViewManager from "./components/view-manager";
+// import ViewManager from "./components/view-manager";
 import { DataProvider } from "./provider/dataProvider";
+import MainScreenX from "./components/main-screen-x";
 // import DiscreteProgressBar from "./components/discrete-progress-bar";
 
 // import TestMain from "./components/test-main";
@@ -14,9 +14,7 @@ function App() {
   //const isWuHan = (location && location === 'wh');
   return (
     <DataProvider>
-      <ViewManager width={4800} height={2080}>
-        <MainScreen4800x2080 />
-    </ViewManager>
+      <MainScreenX />
   </DataProvider>
     
     // <div
