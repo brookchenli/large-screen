@@ -5,7 +5,7 @@ import Panel from "../panel";
 import { useData } from "@/hooks/useData";
 export default function DailyCollection() {
   const { summary } = useData();
-  const { xData = [], yData = [], title = '' } = summary?.leftSide?.row3 ?? {};
+  const { xdata = [], ydata = [], title = '' } = summary?.leftSide?.row3 ?? {};
   const option = {
     title: {
       text: title,
@@ -22,7 +22,7 @@ export default function DailyCollection() {
     },
     xAxis: {
       type: "category",
-      data: xData,
+      data: xdata,
       axisLabel: {
         show: true,
         fontSize: 18,
@@ -57,7 +57,7 @@ export default function DailyCollection() {
           ]),
         },
         smooth: true,
-        data: yData,
+        data: ydata,  
       },
     ],
   };

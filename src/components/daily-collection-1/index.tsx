@@ -6,10 +6,10 @@ import Panel from "../panel";
 import { useData } from "@/hooks/useData";
 export default function DailyCollection1() {
   const { summary } = useData();
-  const { xData = [], yData = [], title = '' } = summary?.leftSide?.row4 ?? {};
+  const { xdata = [], ydata = [], title = '' } = summary?.leftSide?.row4 ?? {};
 
   // 单组每日采集量数据
-  const collectData = yData;
+  const collectData = ydata;
 
   const option = {
     backgroundColor: "transparent",
@@ -21,7 +21,7 @@ export default function DailyCollection1() {
     },
     xAxis: {
       type: "category",
-      data: xData,
+      data: xdata,
       axisLine: {
         lineStyle: { color: "#666" },
       },
