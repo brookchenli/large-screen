@@ -60,14 +60,10 @@ export default function DailyCollection1() {
     series: [
       {
         name: "采集量",
-        type: "line",
-        smooth: true,
-        symbol: "none",
+        type: "bar",
+        barWidth: "40%",
         data: collectData,
-        lineStyle: {
-          width: 0, // 🔑 隐藏折线，只要面积
-        },
-        areaStyle: {
+        itemStyle: {
           color: new echarts.graphic.LinearGradient(
             0,
             0,
@@ -75,10 +71,11 @@ export default function DailyCollection1() {
             1, // 上 → 下
             [
               { offset: 0, color: "rgba(59,130,246,0.85)" },
-              { offset: 0.6, color: "rgba(59,130,246,0.35)" },
-              { offset: 1, color: "rgba(59,130,246,0.05)" },
+              { offset: 0.6, color: "rgba(59,130,246,0.85)" },
+              { offset: 1, color: "rgba(59,130,246,0.85)" },
             ]
           ),
+          borderRadius: [4, 4, 0, 0],
         },
       },
     ],

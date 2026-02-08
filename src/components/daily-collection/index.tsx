@@ -56,21 +56,17 @@ export default function DailyCollection() {
     series: [
       {
         name: "PV",
-        type: "line",
-        areaStyle: {
+        type: "bar",
+        barWidth: "40%",
+        itemStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {
-              offset: 0,
-              color: "rgba(56, 119, 242, 0.5)",
-            },
-            {
-              offset: 1,
-              color: "rgba(0, 176, 93, 0.2)",
-            },
-          ]),
+              { offset: 0, color: "rgba(59,130,246,0.85)" },
+              { offset: 0.6, color: "rgba(59,130,246,0.85)" },
+              { offset: 1, color: "rgba(59,130,246,0.85)" },
+            ]),
+          borderRadius: [4, 4, 0, 0],
         },
-        smooth: true,
-        data: ydata,  
+        data: ydata,
       },
     ],
   };
