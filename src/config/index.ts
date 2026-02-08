@@ -7,7 +7,7 @@ export const APP_CONFIG = {
    * - true: 从 API 获取数据
    * - false: 使用本地 mock 数据
    */
-  useFetchData: true,
+  useFetchData: false,
 
   /**
    * 天气城市

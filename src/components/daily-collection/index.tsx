@@ -6,6 +6,19 @@ import { useData } from "@/hooks/useData";
 export default function DailyCollection() {
   const { summary } = useData();
   const { xdata = [], ydata = [], title = '' } = summary?.leftSide?.row3 ?? {};
+  let showXData = xdata;
+  if (xdata.length > 0) {
+    // 
+    // 获取当前时间，从前天开始往前，指定xdata.length天，每天的日期，格式为1月23日。日期越大越靠后
+    const newXData = [];
+    for (let i = xdata.length - 1; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(date.getDate() - i -2);
+      newXData.push(date.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' }));
+    }
+    showXData = newXData;
+  }
+  // 修改折线图为直方图
   const option = {
     title: {
       text: title,
@@ -22,7 +35,7 @@ export default function DailyCollection() {
     },
     xAxis: {
       type: "category",
-      data: xdata,
+      data: showXData,
       axisLabel: {
         show: true,
         fontSize: 18,

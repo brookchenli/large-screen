@@ -8,6 +8,18 @@ export default function DailyCollection1() {
   const { summary } = useData();
   const { xdata = [], ydata = [], title = '' } = summary?.leftSide?.row4 ?? {};
 
+  let showXData = xdata;
+  if (xdata.length > 0) {
+    // 获取当前时间，从前天开始往前，指定xdata.length天，每天的日期，格式为1月23日。日期越大越靠后
+    const newXData = [];
+    for (let i = xdata.length - 1; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(date.getDate() - i -2);
+      newXData.push(date.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' }));
+    }
+    showXData = newXData;
+  }
+
   // 单组每日采集量数据
   const collectData = ydata;
 
@@ -21,7 +33,7 @@ export default function DailyCollection1() {
     },
     xAxis: {
       type: "category",
-      data: xdata,
+      data: showXData,
       axisLine: {
         lineStyle: { color: "#666" },
       },
